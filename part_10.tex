@@ -1,0 +1,193 @@
+\newpage
+\disableTemplate{covers}
+\disableTemplate{lawordercover}
+\disableTiling
+\AddToTemplate{susebgcard}
+\begin{tikzpicture}[remember picture,overlay]
+	  \node [rotate=0,scale=1,text opacity=0.2]
+	      at (3,-22.2) {Капранов~О.~Г.~\copyright~2010~~~Luga\TeX @yahoo.com};
+\end{tikzpicture}
+
+\begin{textblock}{63}(0.54,0.449)
+\tikzfading[name=fade inside,
+inner color=transparent!80,
+outer color=transparent!30
+]
+\begin{tikzfadingfrompicture}[name=luga]
+	\node [text=transparent!20]
+	{\fontsize{65}{65}\Huge\bfseries\sffamily\selectfont Lu\emph{g}a\TeX};
+\end{tikzfadingfrompicture}
+\begin{tikzpicture}
+	% Checker board
+	\shade [ball color=white,
+		path fading=fade inside] (0,0) circle (3.5);
+	\shade[path fading=luga,fit fading=false,
+	left color=blue,right color=black]
+	(-3.5,-1) rectangle (2,1);
+\end{tikzpicture}
+\end{textblock}
+
+%\begin{tikzfadingfrompicture}[name=luga]
+%	\node [text=transparent!20]
+%	{\fontsize{65}{65}\Huge\bfseries\sffamily\selectfont Lu\emph{g}a\TeX};
+%\end{tikzfadingfrompicture}
+%% Now we use the fading in another picture:
+%\begin{tikzpicture}
+%	\shade[path fading=luga,fit fading=false,
+%	left color=blue,right color=black]
+%	(-3.5,-1) rectangle (2,1);
+%\end{tikzpicture}
+
+\begin{textblock}{64}(0.1,1.2)
+\begin{tikzfadingfrompicture}[name=intv]
+	\node [text=transparent!1]
+	{\fontsize{25}{25}\bfseries\sffamily\selectfont Инт\emph{е}рактивная
+		система знаний};
+\end{tikzfadingfrompicture}
+% Now we use the fading in another picture:
+\begin{tikzpicture}
+	\node[rectangle, inner sep=2pt, minimum height=9.1ex,
+		rounded corners, very thick, minimum width=13.5cm,draw=white,
+		inner color=transparent!80, outer color=transparent!30,
+		draw opacity=0.8, fill opacity=0.2]{\mbox{}};
+	\shade[path fading=intv,fit fading=false,
+	left color=magenta!80!black,right color=black]
+	(-15,-1) rectangle (15,1);
+\end{tikzpicture}
+\end{textblock}
+
+\vglue 155pt
+
+%%%---> \raggedright
+\begin{minipage}{7.5cm}\centering
+\textbf{%
+\sffamily
+\color{red!40!black} Интерактивная система знаний представляет
+собой интерактивно электронные формы предоставления информации.
+\begin{colormixin}{25!white}
+Система разработана для создания интерактивных учебных лекцый,
+экзаменационно --- модульных форм в виде интерактивного заполнения
+и контроля заданий.
+\color{magenta!10!black}
+Ответы могут быть представлены в различной форме или зашифрованы
+специальной формой.
+\begin{colormixin}{85!black}
+Вся система может быть зашифрована с использованием пароля, есть
+возможность отключить такие функции как печать, выделение текста,
+сохранение документа или создание скриншотов т.е. снимков экрана,
+по усмотрению преподователя.
+\color{green!80!black}
+Экзаменационные и модульные контроли могут быть представлены в
+различных формах, с возможностью отображения правельного решения
+или просто ответа или ввиде ссумы очков правельных ответов.
+\end{colormixin}
+\color{yellow!80!black}
+Система позволяет включать интерактивные и всплывающие окна, c
+возможностью отображать документы разных форматов, видио и аудио
+материалы встраиваются паралельно с лекциями в единый формат.
+\end{colormixin}
+\color{black}
+Различные интерактивные формы в учебных материаллах демонстрируют
+разнообразие и простоту их использования демонстрируя наглядность
+информации с различными формами предоставления данных.}
+\end{minipage}\\
+
+\vglue 25pt
+
+\hspace{30pt}
+\tikz[baseline] \node[rectangle, inner sep=2pt, minimum height=3.1ex,
+rounded corners, drop shadow, shadow scale=1, shadow xshift=.8ex,
+shadow yshift=-.4ex, opacity=.7, fill=black!50,
+top color=cyan!90!black!50, bottom color=cyan!80!black!80,
+draw=cyan!50!black!50,very thick,text=white, text opacity=1,
+minimum width=5cm]{Демонстрационная версия};
+
+\vglue 25pt
+%%%--->
+\hspace{-25pt}
+\hypertarget{mylugatex}{%
+\parbox{350pt}{%
+\scalebox{1.2}{%
+{\color{blue}\Telefon}~{\color{brown}$93$-$68$-$11$}\quad
+{\color{blue}\ding{38}}~{\color{brown}$43$-$23$}\quad
+{\color{blue}\Mobilefone}~{\color{brown}$0997170609$}\quad
+{\color{blue}\ding{39}}~{\color{brown}ком.№~$611$~УК-2}}
+}}
+%%%--->
+\begin{textblock}{65}(20.5,4)
+\begin{matrixtable}{6cm}{0.6cm}{
+\head{Интерактивные учебные курсы}		& \mbox{}\\
+Экономика					& \down  \\
+Психология					& \up    \\
+Философия					& \const \\
+Английский язык				& \up    \\
+Украинский язык				& \down  \\
+Информатика					& \up    \\
+Высшая математика			& \up    \\
+Теоретическая физика		& \up    \\
+Теория вероятности			& \up    \\
+Аналитическая геометрия		& \down  \\
+Диффернциальные уравнения	& \up	 \\
+Функциональный анализ		& \up	 \\
+Тензорный анализ			& \up	 \\
+Компактные группы Ли		& \up	 \\
+Административное право		& \up	 \\
+Топология					& \down	 \\
+Математический анализ		& \down	 \\
+Абстрактные группы			& \down	 \\		
+Алгебраическая геометрия	& \down	 \\
+							& \\
+							& \\
+							& \\
+							& \\
+							& \\
+							& \\
+							& \\
+							& \\
+							& \\
+							& \\
+							& \\
+							& \\
+							& \\
+							& \\
+							& \\
+							& \\
+							& \\
+							& \\
+							& \\
+							& \\
+							& \\
+							& \\
+							& \\
+							& \\
+							& \\
+							& \\
+							& \\
+							& \\
+							& \\
+							& \\
+							& \\
+							& \\
+							& \\
+							& \\
+							& \\
+							& \\
+							& \\
+							& \\
+							& \\
+							& \\
+							& \\
+							& \\
+							& \\
+							& \\
+							& \\
+							& \\
+							& \\
+							& \\
+							& \\
+							& \\
+							& \\
+{\bf Заказывайте любой учебній курс~!}	& \const \\							
+}
+\end{matrixtable}
+\end{textblock}

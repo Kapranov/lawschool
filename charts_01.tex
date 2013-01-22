@@ -1,0 +1,35 @@
+\documentclass[english,russian]{article}
+\usepackage{pscyr}
+\usepackage{ucs}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8x]{inputenc}
+\usepackage[russian]{babel}
+
+\usepackage{tikz}
+\usetikzlibrary{mindmap,trees}
+
+\begin{document}
+\pagestyle{empty}
+
+\begin{tikzpicture}
+  \path[mindmap,concept color=black,text=white]
+  node[concept] {Форми поточного контролю}
+    [clockwise from=0]
+    child[concept color=red] { node[concept] {%
+		опитування під час проведення семінарських
+	   	і практичних занять} }
+    child[concept color=red] { node[concept] {%
+		проведення контрольних робіт} }
+    child[concept color=red] { node[concept] {%
+		проведення опитування з застосуванням
+	   	спеціальних комп'ютерних програм} }
+    child[concept color=red] { node[concept] {%
+	заслуховування рефератів, доповідей} }
+    child[concept color=red] { node[concept] {%
+	вирішення задач} }
+    child[concept color=red] { node[concept] {%
+	оцінювання виконання вправ} }
+    child[concept color=orange] { node[concept] {%
+	оцінювання вирішення практичних завдань} };
+\end{tikzpicture}
+\end{document}

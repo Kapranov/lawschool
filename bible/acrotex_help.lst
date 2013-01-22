@@ -1,0 +1,3 @@
+\Acrobatmenu{GoToPage}{\addButton{\buttonwidth}{Page \textcolor{black}{\thepage}\space\@of\space \textcolor{black}{\ScreenLastPage} }}\\\pfill
+
+

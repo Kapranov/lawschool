@@ -1,0 +1,300 @@
+\AddToTemplate{lawordercover}
+\enableTiling
+\newpage
+\disableTemplate{covers}
+\begin{tikzpicture}[remember picture,overlay]
+	  \node [rotate=0,scale=2,text opacity=0.2]
+	      at (27,1.7) {Капранов~О.~Г.~\copyright~2010~~~Luga\TeX @yahoo.com};
+\end{tikzpicture}
+%%%-----------------------------------------------------------------------
+\begin{textblock}{17}(25,-0.01)
+%\begin{textblock}{5}(25,0)
+\begin{tikzpicture}[even odd rule,rounded corners=2pt,x=10pt,y=10pt,drop shadow]
+\filldraw[fill=yellow!90!black!40,drop shadow] (0,0)   rectangle (1,1)
+	[xshift=5pt,yshift=5pt]   (0,0)   rectangle (1,1)
+	[rotate=30]   (-1,-1) rectangle (2,2);
+\node at (0,1.7) {\textbf{\thepage}};			      
+\end{tikzpicture}
+\end{textblock}
+%%%--- Navigational panel top page
+\begin{textblock}{18}(7.58,0.85)
+\mbox{%%%--->
+\Acrobatmenu{LastPage}{%
+\tikz[baseline] \node[rectangle,inner sep=2pt,minimum height=3.1ex,
+rounded corners,drop shadow,shadow scale=1,shadow xshift=.8ex,
+shadow yshift=-.4ex,opacity=.7,fill=black!50,top color=red!90!black!50,
+bottom color=red!80!black!80,draw=red!50!black!50,very thick,text=white,
+text opacity=1,minimum width=3cm,font=\bfseries\sffamily] at (0,0) {К концу};
+}\Acrobatmenu{GoBack}{%
+\tikz[baseline] \node[rectangle,inner sep=2pt,minimum height=3.1ex,
+rounded corners,drop shadow,shadow scale=1,shadow xshift=.8ex,
+shadow yshift=-.4ex,opacity=.7,fill=black!50,top color=red!90!black!50,
+bottom color=red!80!black!80,draw=red!50!black!50,very thick,text=white,
+text opacity=1,minimum width=3cm,font=\bfseries\sffamily] at (4,0) {Назад};
+}\Acrobatmenu{PrevPage}{%
+\tikz[baseline] \node[rectangle,inner sep=2pt,minimum height=3.1ex,
+rounded corners,drop shadow,shadow scale=1,shadow xshift=.8ex,
+shadow yshift=-.4ex,opacity=.7,fill=black!50,top color=red!90!black!50,
+bottom color=red!80!black!80,draw=red!50!black!50,very thick,text=white,
+text opacity=1,minimum width=3cm,font=\bfseries\sffamily] at (8,0) {Предыдущий};
+}\Acrobatmenu{NextPage}{%
+\tikz[baseline] \node[rectangle,inner sep=2pt,minimum height=3.1ex,
+rounded corners,drop shadow,shadow scale=1,shadow xshift=.8ex,
+shadow yshift=-.4ex,opacity=.7,fill=black!50,top color=red!90!black!50,
+bottom color=red!80!black!80,draw=red!50!black!50,very thick,text=white,
+text opacity=1,minimum width=3cm,font=\bfseries\sffamily] at (12,0) {Следующий};
+}\Acrobatmenu{GoForward}{%
+\tikz[baseline] \node[rectangle,inner sep=2pt,minimum height=3.1ex,
+rounded corners,drop shadow,shadow scale=1,shadow xshift=.8ex,
+shadow yshift=-.4ex,opacity=.7,fill=black!50,top color=red!90!black!50,
+bottom color=red!80!black!80,draw=red!50!black!50,very thick,text=white,
+text opacity=1,minimum width=3cm,font=\bfseries\sffamily] at (16,0) {Вперед};
+}\Acrobatmenu{FirstPage}{%
+\tikz[baseline] \node[rectangle,inner sep=2pt,minimum height=3.1ex,
+rounded corners,drop shadow,shadow scale=1,shadow xshift=.8ex,
+shadow yshift=-.4ex,opacity=.7,fill=black!50,top color=red!90!black!50,
+bottom color=red!80!black!80,draw=red!50!black!50,very thick,text=white,
+text opacity=1,minimum width=3cm,font=\bfseries\sffamily] at (20,0) {К началу};
+}\Acrobatmenu{FullScreen}{%
+\tikz[baseline] \node[rectangle,inner sep=2pt,minimum height=3.1ex,
+rounded corners,drop shadow,shadow scale=1,shadow xshift=.8ex,
+shadow yshift=-.4ex,opacity=.7,fill=black!50,top color=red!90!black!50,
+bottom color=red!80!black!80,draw=red!50!black!50,very thick,text=white,
+text opacity=1,minimum width=3cm,font=\bfseries\sffamily] at (24,0) {Полный экран};
+}\Acrobatmenu{Quit}{%
+\tikz[baseline] \node[rectangle,inner sep=2pt,minimum height=3.1ex,
+rounded corners,drop shadow,shadow scale=1,shadow xshift=.8ex,
+shadow yshift=-.4ex,opacity=.7,fill=black!50,top color=red!90!black!50,
+bottom color=red!80!black!80,draw=red!50!black!50,very thick,text=white,
+text opacity=1,minimum width=3cm,font=\bfseries\sffamily] at (28,0) {Выход};
+}
+}%%%---|
+\end{textblock}
+%%%----------------------------------------------------------------------|
+\vglue -18pt
+\hspace{187pt}
+\parbox{350pt}{%
+\hypertarget{mymedia}{\hyperlink{preface}{%
+\begin{tikzpicture}
+  \colorlet{even}{cyan!60!black}
+  \colorlet{odd}{orange!100!black}
+  \colorlet{links}{red!70!black}
+  \colorlet{back}{yellow!20!white}
+  \tikzset{
+    box/.style={
+      minimum height=15mm,
+      inner sep=.7mm,
+      outer sep=0mm,
+      text width=120mm,
+      text centered,
+      font=\small\bfseries\sffamily,
+      text=#1!50!black,
+      draw=#1,
+      line width=.25mm,
+      top color=#1!5,
+      bottom color=#1!40,
+      shading angle=0,
+      rounded corners=2.3mm,
+      drop shadow={fill=#1!40!gray,fill opacity=.8},
+      rotate=0,
+    },
+  }
+  \node [box=even]{{\huge\textbf{Мультимедийные лекции}}};
+\end{tikzpicture}
+}}}\\
+\begin{flushleft}
+\parbox{520pt}{%
+%%%---> Old version
+%	\mbox{\includegraphics[scale=.99]{video_02.png}}\par
+%%%----------------------------------------------------------------------|
+\begin{tikzfadingfrompicture}[name=myvideoa]
+	\node [text=transparent!1]
+	{\fontsize{25}{25}\bfseries\sffamily\selectfont Видеол\emph{е}кция};
+\end{tikzfadingfrompicture}
+\begin{tikzfadingfrompicture}[name=myvideob]
+	\node [text=transparent!1]
+	{\fontsize{25}{25}\normalsize\bfseries\sffamily\selectfont полный курс};
+\end{tikzfadingfrompicture}
+\begin{tikzfadingfrompicture}[name=myvideoc]
+	\node [text=transparent!1]
+	{\fontsize{25}{25}\large\bfseries\sffamily\selectfont Административное право};
+\end{tikzfadingfrompicture}
+\begin{tikzpicture}
+	\node {%
+	\mbox{\includegraphics[scale=.99]{video_02.png}}	
+	};
+	\node[rectangle, inner sep=2pt, very thick, draw=black,
+	inner color=transparent!80, outer color=transparent!30,
+	draw opacity=0.8, fill opacity=0.2, line width=1.6pt,
+	minimum width=16.48cm, minimum height=51.4ex
+	] at (-0.32,0.26) {\mbox{}};
+%	\shade[path fading=myvideoa,fit fading=false,
+%	left color=blue!80!black,right color=black]
+%	(-15.8,-1) rectangle (3.7,1);
+%	\shade[path fading=myvideob,fit fading=false,
+%	left color=blue!80!black,right color=black]
+%	(-2.8,-1) rectangle (2.7,1);
+%	\shade[path fading=myvideoc,fit fading=false,
+%	left color=red!80!black,right color=black]
+%	(-2.8,-1) rectangle (2.7,1);
+	\node [%
+	minimum height=65mm,
+	inner sep=.7mm,
+	outer sep=0mm,
+	text width=65mm,
+	text centered,
+	font=\huge\bfseries\sffamily,
+	text=white!100!black,
+	line width=.25mm,
+	rounded corners=3.3mm,
+	%rounded corners=2.3mm,
+	shading angle=45,
+%	draw=orange!100!black,
+%	top color=orange!100!black!5,
+%	bottom color=orange!100!black!40,
+%	drop shadow={fill=orange!100!black!40!gray,fill opacity=.8},
+	draw=gray,
+	inner color=transparent!80,
+	outer color=transparent!30,
+	draw opacity=0.8,
+	fill opacity=0.2,
+%	opacity=1,
+	text opacity=1,
+%	fill=blue!65!black
+	] at (-4.7,0.5) {Видеолекция\\[-13pt]
+	{\small 02:45:59}\\
+	{\normalsize <<Административное право>>}\\[-13pt]
+	{\small полный курс}\\
+	{\normalsize Горбачев Борис Иванович}\\[-13pt]
+	{\small Доцент, кандидат юридических наук}
+	};
+\end{tikzpicture}\par
+\begin{center}
+\parbox{420pt}{%
+	Видеолекция в формате \textbf{AVI} по предмету
+	<<\textcolor{magenta}{\bf Административное право}>>,
+	лекция была записана в течении семестра с сентября по
+	декабрь 2010 года, и смонтирована в единый файл.
+	Для просмотра, нажмите мышкой по центру окна Видеолекция
+	полный курс.}
+\vglue 25pt
+\parbox{420pt}{%
+Аудиолекция по предмету <<\textcolor{magenta}{\bf Административное право}>>
+с комментариями, звуковое сопровождение Капланов Олег Георгиевич,
+в формате \textbf{MP3}, продолжительность \textbf{8} часов \textbf{43}
+минуты. Для прослушивания лекции подвидите мышку к ссылке
+\textbf{Аудиолекция}, и нажмите на нее.
+Аудиолекция воспроизводится автоматически в фоновом режиме, вы можете
+одновременно прослушивать лекцию и работать с интерактивными документами.
+}
+\vglue 25pt
+\mbox{%
+\begin{tikzpicture}[rounded corners,ultra thick]
+	\node [rectangle,very thick,
+		bottom color=blue!80!black!30,
+		top color=white,
+		draw=blue!50!black!50,
+		minimum width=9cm,
+		drop shadow,
+		] at (0,0) {%
+		\textcolor{black}{\textbf{Аудиолекция в формате MP3}}};
+	\pattern [path fading=north] ;
+	\pattern [top color=transparent!50,bottom color=transparent!50,color=transparent!20] ;
+\end{tikzpicture}
+}
+\vglue 25pt
+\parbox{420pt}{%
+Электронный навчально-методичний посібник по предмету
+<<\textcolor{magenta}{\bf Административное право}>>,
+с автоматическим перелистованием страниц. Подвидите мышку к кнопке
+<<\textbf{Интерактивный навчально-методичний посібник}>>,
+и документ будет отображатся с задержкой для каждой страницы
+\textbf{30 секунд}.
+}
+\vglue 25pt
+\mbox{}\hspace{5pt}\mbox{%
+\tooltipanim{%}{1}{43}\par
+\begin{tikzpicture}[rounded corners,ultra thick]
+	\node [rectangle,very thick,
+		bottom color=blue!80!black!30,
+		top color=white,
+		draw=blue!50!black!50,
+		minimum width=9cm,
+		drop shadow,
+		] at (0,0) {%
+		\textcolor{black}{\textbf{Интерактивный навчально-методичний посібник}}};
+	\pattern [path fading=north] ;
+	\pattern [top color=transparent!50,bottom color=transparent!50,color=transparent!20] ;
+\end{tikzpicture}
+}{1}{10}
+}
+\end{center}
+}
+\hspace{48pt}
+\parbox{410pt}{%
+\begin{tikzpicture}
+\node (tbl) {
+\begin{tabularx}{400pt}{rccccc}
+\arrayrulecolor{purple}
+ & \textcolor{white}{\bf Автор} & \textcolor{white}{\bf Название} & \textcolor{white}{\bf WMV}&
+	\textcolor{white}{\bf MP3}&\textcolor{white}{\bf PDF}\\[0.5ex]
+ & & & & &\\
+	& \parbox{65pt}{\includegraphics[scale=.69]{faces_01.jpg}}
+	& \parbox{175pt}{Арлинский Юрий Моисеевич\par Зав. кафедрою, професор,\par
+		доктор фіз.-мат. наук\par
+			Функціональний аналіз} & 
+	\mbox{\includegraphics[scale=.69]{wmv.png}} &
+	\mbox{\includegraphics[scale=.69]{mp3.png}} &
+	\mbox{\includegraphics[scale=.69]{pdf.png}}\\
+  &  & & & &\\
+	& \parbox{65pt}{\includegraphics[scale=.69]{faces_02.jpg}}
+	& \parbox{175pt}{Балицька Татьяна Юревна\par Доцент, кандидат технічних наук\par
+	Математичний аналіз} & 
+	\mbox{\includegraphics[scale=.69]{wmv.png}} &
+	\mbox{\includegraphics[scale=.69]{mp3.png}} &
+	\mbox{\includegraphics[scale=.69]{pdf.png}}\\
+  & & & & &\\
+	& \parbox{65pt}{\includegraphics[scale=.69]{faces_03.jpg}}
+	& \parbox{175pt}{Кочевський А.О.\par Доцент, кандидат технічних наук\par
+		Чисельні методи} & 
+	\mbox{\includegraphics[scale=.69]{wmv.png}} &
+	\mbox{\includegraphics[scale=.69]{mp3.png}} &
+	\mbox{\includegraphics[scale=.69]{pdf.png}}\\
+  & & & & &\\
+	& \parbox{65pt}{\includegraphics[scale=.69]{faces_04.jpg}}
+	& \parbox{175pt}{Щестюк Н.Ю.\par Доцент, канд. фіз.-мат. наук\par
+		Теорія функцій комплексної змінної} & 
+	\mbox{\includegraphics[scale=.69]{wmv.png}} &
+	\mbox{\includegraphics[scale=.69]{mp3.png}} &
+	\mbox{\includegraphics[scale=.69]{pdf.png}}\\
+  & & & & &\\
+	& \parbox{65pt}{\includegraphics[scale=.69]{faces_05.jpg}}
+	& \parbox{175pt}{Деордиця Ю.С.\par Професор, кандидат технічних наук\par
+		Економiко-математичне моделювання} & 
+	\mbox{\includegraphics[scale=.69]{wmv.png}} &
+	\mbox{\includegraphics[scale=.69]{mp3.png}} &
+	\mbox{\includegraphics[scale=.69]{pdf.png}}\\
+  & & & & &\\
+	& \parbox{65pt}{\includegraphics[scale=.69]{faces_06.jpg}}
+	& \parbox{175pt}{Чабанова Т.Д.\par Доцент, кандидат педагогічних наук\par
+		Методика викладання математики} & 
+	\mbox{\includegraphics[scale=.69]{wmv.png}} &
+	\mbox{\includegraphics[scale=.69]{mp3.png}} &
+	\mbox{\includegraphics[scale=.69]{pdf.png}}\\
+  & & & & &\\
+\end{tabularx}};
+
+\begin{pgfonlayer}{background}
+\draw[rounded corners,top color=red,bottom color=black,draw=white]
+	($(tbl.north west)+(0.14,0)$) rectangle ($(tbl.north east)-(0.13,0.9)$);
+\draw[rounded corners,top color=white,bottom color=black,
+	middle color=red,draw=blue!20] ($(tbl.south west) +(0.12,0.5)$)
+		rectangle ($(tbl.south east)-(0.12,0)$);
+\draw[top color=blue!1,bottom color=blue!20,draw=white]
+	($(tbl.north east)-(0.13,0.6)$) rectangle ($(tbl.south west)+(0.13,0.2)$);
+\end{pgfonlayer}
+\end{tikzpicture}
+}
+\end{flushleft}
+%%%----------------------------------------------------------------------|
+

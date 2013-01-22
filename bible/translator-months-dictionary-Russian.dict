@@ -1,0 +1,14 @@
+\ProvidesDictionary{translator-months-dictionary}{Russian}
+
+\providetranslation{January}{Январь}
+\providetranslation{February}{Февраль}
+\providetranslation{March}{Март}
+\providetranslation{April}{Апрель}
+\providetranslation{May}{Май}
+\providetranslation{June}{Июнь}
+\providetranslation{July}{Июль}
+\providetranslation{August}{Август}
+\providetranslation{September}{Сентябрь}
+\providetranslation{October}{Октябрь}
+\providetranslation{November}{Ноябрь}
+\providetranslation{December}{Декабрь}

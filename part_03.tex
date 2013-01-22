@@ -1,0 +1,286 @@
+\newpage
+%%%---> New  Page calendar 2010
+%%%---> Main baground overlay
+\begin{tikzpicture}[remember picture,overlay]
+	\draw [line width=1mm,opacity=.25] 
+		(current page.center) circle (1cm);
+
+		\begin{pgfonlayer}{background}
+			\colorlet{upperleft}{green!50!black!25}
+			\colorlet{upperright}{orange!25}
+			\colorlet{lowerleft}{red!25}
+			\colorlet{lowerright}{blue!25}
+			
+			% The large rectangles:
+			\fill [upperleft] (current page.center) rectangle ++(-18.2,15);
+			\fill [upperright] (current page.center) rectangle ++(18.2,15);
+			\fill [lowerleft] (current page.center) rectangle ++(-18.2,-15);
+			\fill [lowerright] (current page.center) rectangle ++(18.2,-15);
+
+			% The shadings:
+			\shade [left color=upperleft,right color=upperright]
+			([xshift=-1cm]current page.center) rectangle ++(2,15);
+			\shade [left color=lowerleft,right color=lowerright]
+			([xshift=-1cm]current page.center) rectangle ++(2,-15);
+			\shade [top color=upperleft,bottom color=lowerleft]
+			([yshift=-1cm]current page.center) rectangle ++(-18.2,2);
+			\shade [top color=upperright,bottom color=lowerright]
+			([yshift=-1cm]current page.center) rectangle ++(18.2,2);
+		\end{pgfonlayer}
+\end{tikzpicture}
+\begin{tikzpicture}[remember picture,overlay]
+	  \node [rotate=0,scale=2,text opacity=0.2]
+	      at (27,1.7) {Капранов~О.~Г.~\copyright~2010~~~Luga\TeX @yahoo.com};
+\end{tikzpicture}
+\vglue -18pt
+\hspace{187pt}
+\parbox{350pt}{%
+\hypertarget{studyear}{\hyperlink{mymedia}{%
+\begin{tikzpicture}
+  \colorlet{even}{cyan!60!black}
+  \colorlet{odd}{orange!100!black}
+  \colorlet{links}{red!70!black}
+  \colorlet{back}{yellow!20!white}
+  \tikzset{
+    box/.style={
+      minimum height=15mm,
+      inner sep=.7mm,
+      outer sep=0mm,
+      text width=120mm,
+      text centered,
+      font=\small\bfseries\sffamily,
+      text=#1!50!black,
+      draw=#1,
+      line width=.25mm,
+      top color=#1!5,
+      bottom color=#1!40,
+      shading angle=0,
+      rounded corners=2.3mm,
+      drop shadow={fill=#1!40!gray,fill opacity=.8},
+      rotate=0,
+    },
+  }
+  \node [box=odd]{{\huge\textbf{Учебный год\quad 2010--2011}}};
+\end{tikzpicture}
+}}}\\
+
+\begin{center}
+\sffamily
+\colorlet{winter}{blue}
+\colorlet{spring}{green!60!black}
+\colorlet{summer}{orange}
+\colorlet{fall}{red}
+% A counter, since TikZ is not clever enough (yet) to handle
+% arbitrary angle systems.
+%
+% anchor=mid
+\newcount\mycount
+\begin{tikzpicture}
+	[transform shape,
+	every day/.style={font=\fontsize{6}{6}\selectfont}]
+	\node [circular drop shadow={shadow scale=1.05},minimum size=4.33cm,
+	decorate, decoration=zigzag, fill=blue!20,draw,thick,circle] 
+   	 (maintime)
+   		{\large\bfseries\sffamily Учебный год \the\year};
+	\foreach \month/\monthcolor in
+	{1/winter,2/winter,3/spring,4/spring,5/spring,6/summer,
+	7/summer,8/summer,9/fall,10/fall,11/fall,12/winter}
+	{
+	% Computer angle:
+	\mycount=\month
+	\advance\mycount by -1
+	\multiply\mycount by 30
+	\advance\mycount by -90
+	% The actual calendar
+	\calendar at (\the\mycount:6.4cm)
+	[
+	dates=\the\year-\month-01 to \the\year-\month-last,
+	]
+	if (day of month=1) {\color{\monthcolor}\tikzmonthcode}
+	if (Sunday) [red]
+	if (all)
+	{
+	% Again, compute angle
+	\mycount=1
+	\advance\mycount by -\pgfcalendarcurrentday
+	\multiply\mycount by 11
+	\advance\mycount by 90
+	\pgftransformshift{\pgfpointpolar{\mycount}{1.4cm}}
+	};
+	}
+
+%%%---> New version
+%	\begin{pgfonlayer}{background}
+%	\colorlet{upperleft}{green!50!black!25}
+%	\colorlet{upperright}{orange!25}
+%	\colorlet{lowerleft}{red!25}
+%	\colorlet{lowerright}{blue!25}
+%
+%	\fill [upperleft] (maintime) rectangle ++(-10,8.66);
+%	\fill [upperright] (maintime) rectangle ++(10,8.66);
+%	\fill [lowerleft] (maintime) rectangle ++(-10,-8.66);
+%	\fill [lowerright] (maintime) rectangle ++(10,-8.66);
+%
+%	\shade [left color=upperleft,right color=upperright]
+%	([xshift=-1cm]maintime) rectangle ++(2,8.66);
+%	\shade [left color=lowerleft,right color=lowerright]
+%	([xshift=-1cm]maintime) rectangle ++(2,-8.66);
+%	\shade [top color=upperleft,bottom color=lowerleft]
+%	([yshift=-1cm]maintime) rectangle ++(-10,2);
+%	\shade [top color=upperright,bottom color=lowerright]
+%	([yshift=-1cm]maintime) rectangle ++(10,2);
+%\end{pgfonlayer}
+%%%---> Old version
+%	\begin{pgfonlayer}{background}
+%		\clip[xshift=-1cm] (-.5\textwidth,-.5\textheight) rectangle ++(\textwidth,\textheight);
+%		\colorlet{upperleft}{green!50!black!25}
+%		\colorlet{upperright}{orange!25}
+%		\colorlet{lowerleft}{red!25}
+%		\colorlet{lowerright}{blue!25}
+%		% The large rectangles:
+%		\fill [upperleft] (Computational Complexity) rectangle ++(-20,20);
+%		\fill [upperright] (Computational Complexity) rectangle ++(20,20);
+%		\fill [lowerleft] (Computational Complexity) rectangle ++(-20,-20);
+%		\fill [lowerright] (Computational Complexity) rectangle ++(20,-20);
+%		% The shadings:
+%		\shade [left color=upperleft,right color=upperright]
+%		([xshift=-1cm]Computational Complexity) rectangle ++(2,20);
+%		\shade [left color=lowerleft,right color=lowerright]
+%		([xshift=-1cm]Computational Complexity) rectangle ++(2,-20);
+%		\shade [top color=upperleft,bottom color=lowerleft]
+%		([yshift=-1cm]Computational Complexity) rectangle ++(-20,2);
+%		\shade [top color=upperright,bottom color=lowerright]
+%		([yshift=-1cm]Computational Complexity) rectangle ++(20,2);
+%	\end{pgfonlayer}
+\end{tikzpicture}
+\end{center}
+
+\begin{textblock}{8}(0.4,13)
+\sffamily\scriptsize
+\tikz
+\calendar [dates=2010-01-01 to 2010-12-31,
+month list,month label left,month yshift=1.25em]
+if (Sunday) [white];
+\end{textblock}
+\begin{textblock}{9}(14,13)
+\sffamily\scriptsize
+\tikz
+\calendar [dates=2011-01-01 to 2011-12-31,
+month list,month label left,month yshift=1.25em]
+if (Sunday) [white];
+\end{textblock}
+
+\begin{textblock}{10}(1,3)
+\begin{tikzpicture}
+	\calendar
+	[
+	dates=2010-10-01 to 2010-11-last,
+	week list,inner sep=2pt,month label above centered,
+	month text=\%mt \%y0
+	]
+	if (at most=2010-10-29) [nodes={strike out,draw}]
+	if (weekend) [black!50,nodes={draw=none}]
+	;
+\end{tikzpicture}
+\end{textblock}
+\begin{textblock}{11}(22.2,3)
+	\begin{tikzpicture}
+		\calendar
+		[
+		dates=\year-\month-\day+-25 to \year-\month-\day+25,
+		week list,inner sep=2pt,month label above centered,
+		month text=\textit{\%mt \%y0}
+		]
+		if (at least=\year-\month-\day) {}
+		else [nodes={strike out,draw}]
+		if (at most=\year-\month-\day+7)
+		[green!50!black]
+		if (between=\year-\month-\day+8 and \year-\month-\day+10)
+		[red]
+		if (Sunday)
+		[gray,nodes={draw=none}]
+		;
+	\end{tikzpicture}
+\end{textblock}
+
+\begin{textblock}{12}(4.8,12)
+	\begin{tikzpicture}
+	\node [draw=blue,thick,fill=blue!50,
+		font=\large\bfseries\sffamily] {\bf Учебный год: 2010};
+	\end{tikzpicture}
+\end{textblock}
+\begin{textblock}{13}(18.3,12)
+	\begin{tikzpicture}
+	\node [draw=red,thick,fill=red!50,
+		font=\large\bfseries\sffamily] {\bf Учебный год: 2011};
+	\end{tikzpicture}
+\end{textblock}
+%%%-----------------------------------------------------------------------
+\begin{textblock}{14}(25,-0.01)
+\begin{tikzpicture}[even odd rule,rounded corners=2pt,x=10pt,y=10pt,drop shadow]
+\filldraw[fill=yellow!90!black!40,drop shadow] (0,0)   rectangle (1,1)
+	[xshift=5pt,yshift=5pt]   (0,0)   rectangle (1,1)
+	[rotate=30]   (-1,-1) rectangle (2,2);
+\node at (0,1.7) {\textbf{\thepage}};			      
+\end{tikzpicture}
+\end{textblock}
+%%%--- Navigational panel top page
+\begin{textblock}{15}(7.58,0.85)
+\mbox{%%%--->
+\Acrobatmenu{LastPage}{%
+\tikz[baseline] \node[rectangle,inner sep=2pt,minimum height=3.1ex,
+rounded corners,drop shadow,shadow scale=1,shadow xshift=.8ex,
+shadow yshift=-.4ex,opacity=.7,fill=black!50,top color=red!90!black!50,
+bottom color=red!80!black!80,draw=red!50!black!50,very thick,text=white,
+text opacity=1,minimum width=3cm,font=\bfseries\sffamily] at (0,0) {К концу};
+}\Acrobatmenu{GoBack}{%
+\tikz[baseline] \node[rectangle,inner sep=2pt,minimum height=3.1ex,
+rounded corners,drop shadow,shadow scale=1,shadow xshift=.8ex,
+shadow yshift=-.4ex,opacity=.7,fill=black!50,top color=red!90!black!50,
+bottom color=red!80!black!80,draw=red!50!black!50,very thick,text=white,
+text opacity=1,minimum width=3cm,font=\bfseries\sffamily] at (4,0) {Назад};
+}\Acrobatmenu{PrevPage}{%
+\tikz[baseline] \node[rectangle,inner sep=2pt,minimum height=3.1ex,
+rounded corners,drop shadow,shadow scale=1,shadow xshift=.8ex,
+shadow yshift=-.4ex,opacity=.7,fill=black!50,top color=red!90!black!50,
+bottom color=red!80!black!80,draw=red!50!black!50,very thick,text=white,
+text opacity=1,minimum width=3cm,font=\bfseries\sffamily] at (8,0) {Предыдущий};
+}\Acrobatmenu{NextPage}{%
+\tikz[baseline] \node[rectangle,inner sep=2pt,minimum height=3.1ex,
+rounded corners,drop shadow,shadow scale=1,shadow xshift=.8ex,
+shadow yshift=-.4ex,opacity=.7,fill=black!50,top color=red!90!black!50,
+bottom color=red!80!black!80,draw=red!50!black!50,very thick,text=white,
+text opacity=1,minimum width=3cm,font=\bfseries\sffamily] at (12,0) {Следующий};
+}\Acrobatmenu{GoForward}{%
+\tikz[baseline] \node[rectangle,inner sep=2pt,minimum height=3.1ex,
+rounded corners,drop shadow,shadow scale=1,shadow xshift=.8ex,
+shadow yshift=-.4ex,opacity=.7,fill=black!50,top color=red!90!black!50,
+bottom color=red!80!black!80,draw=red!50!black!50,very thick,text=white,
+text opacity=1,minimum width=3cm,font=\bfseries\sffamily] at (16,0) {Вперед};
+}\Acrobatmenu{FirstPage}{%
+\tikz[baseline] \node[rectangle,inner sep=2pt,minimum height=3.1ex,
+rounded corners,drop shadow,shadow scale=1,shadow xshift=.8ex,
+shadow yshift=-.4ex,opacity=.7,fill=black!50,top color=red!90!black!50,
+bottom color=red!80!black!80,draw=red!50!black!50,very thick,text=white,
+text opacity=1,minimum width=3cm,font=\bfseries\sffamily] at (20,0) {К началу};
+}\Acrobatmenu{FullScreen}{%
+\tikz[baseline] \node[rectangle,inner sep=2pt,minimum height=3.1ex,
+rounded corners,drop shadow,shadow scale=1,shadow xshift=.8ex,
+shadow yshift=-.4ex,opacity=.7,fill=black!50,top color=red!90!black!50,
+bottom color=red!80!black!80,draw=red!50!black!50,very thick,text=white,
+text opacity=1,minimum width=3cm,font=\bfseries\sffamily] at (24,0) {Полный экран};
+}\Acrobatmenu{Quit}{%
+\tikz[baseline] \node[rectangle,inner sep=2pt,minimum height=3.1ex,
+rounded corners,drop shadow,shadow scale=1,shadow xshift=.8ex,
+shadow yshift=-.4ex,opacity=.7,fill=black!50,top color=red!90!black!50,
+bottom color=red!80!black!80,draw=red!50!black!50,very thick,text=white,
+text opacity=1,minimum width=3cm,font=\bfseries\sffamily] at (28,0) {Выход};
+}
+}%%%---|
+\end{textblock}
+\begin{textblock}{16}(13.39,1.305)
+\begin{tikzpicture}[remember picture,overlay]
+	\node {\mbox{\includegraphics[scale=0.99]{./laworder_bg_01}}};
+\end{tikzpicture}
+\end{textblock}	
+%%%----------------------------------------------------------------------|

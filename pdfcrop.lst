@@ -1,0 +1,12 @@
+% --margins "<left> <top> <right> <bottom>"
+% pdftk in.pdf cat 1-12 14-end output out1.pdf
+% pdftk in.pdf background back.pdf output out.pdf
+% pdftk in1.pdf in2.pdf cat output out1.pdf
+%
+% pdfposter -s0.8 pages-001-scale.pdf pages-001-Scale.pdf
+%
+pdftk out1.pdf background cover_book_right-NEW.pdf output proba-r.pdf
+pdftk out2.pdf background cover_book_left-NEW.pdf output proba-l.pdf
+pdfcrop --margins '0 0 -1 0' proba-r.pdf proba-r-News.pdf
+pdfcrop --margins '0 0 0 0' proba-l.pdf proba-l-News.pdf
+

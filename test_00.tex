@@ -1,0 +1,282 @@
+%%%----------------------------------------------------------------------------
+\newpage
+\tikzfading[name=middle,top color=transparent!50,bottom color=transparent!50,
+	middle color=transparent!20]
+\begin{tikzpicture}
+	\node [circle,circular drop shadow,
+		pattern=horizontal lines dark blue,
+		path fading=south,
+		minimum size=3.6cm] {};
+		\pattern [path fading=north,
+			pattern=horizontal lines dark gray]
+			(0,0) circle (1.8cm);
+		\pattern [path fading=middle,
+			pattern=crosshatch dots light steel blue]
+			(0,0) circle (1.8cm);
+\end{tikzpicture}
+% Now we use the fading in another picture:
+\vglue 15pt
+%%%---> Tikz TEXT
+%\begin{tikzfadingfrompicture}[name=tikz]
+%	  \node [text=transparent!20]
+%	      {\fontfamily{ptm}\fontsize{75}{75}\bfseries\selectfont Lu\emph{ga}\TeX};
+%\end{tikzfadingfrompicture}
+% Now we use the fading in another picture:
+%\begin{tikzpicture}
+%\shade[path fading=tikz,fit fading=false,
+%	left color=blue,right color=black] (-3,-1) rectangle (3,1);
+%\end{tikzpicture}
+\vglue 35pt
+
+\begin{tikzpicture}[rounded corners,ultra thick]
+%	\shade[top color=yellow,bottom color=black] (0,0) rectangle +(2,1);
+%	\shade[left color=yellow,right color=black] (3,0) rectangle +(2,1);
+%	\shadedraw[inner color=yellow,outer color=black,draw=yellow] (0,0) rectangle +(5,1);
+	%\node [inner color=yellow,outer color=black,draw=yellow] {%
+	\node [rectangle,very thick,
+		bottom color=blue!80!black!30,
+		top color=white,
+		draw=blue!50!black!50,
+		drop shadow,
+		%path fading=south,
+		] at (0,0) {%
+		\textcolor{black}{\textbf{Интерактивный навчально-методичний посібник}}};
+	\pattern [path fading=north] ;
+	\pattern [path fading=middle] ;
+\end{tikzpicture}
+
+\vglue 15pt
+
+\begin{tikzpicture}
+	\node[rectangle,inner sep=2pt,minimum height=3.1ex,rounded corners,
+	drop shadow,shadow scale=1,shadow xshift=.8ex,shadow yshift=-.4ex,opacity=.9,
+	fill=black!50,top color=white,bottom color=blue!80!black!30,
+	draw=blue!50!black!50,very thick,text=black,text opacity=1]
+	(inbottom) {%
+	\textbf{Интерактивный навчально-методичний посібник}
+	};
+	\pattern [path fading=north] ;
+	\pattern [path fading=middle] ;
+\end{tikzpicture}
+
+\vglue 15pt
+
+\begin{tikzpicture}
+	\node[rectangle,inner sep=2pt,minimum height=3.1ex,rounded corners,
+	drop shadow,shadow scale=1,shadow xshift=.8ex,shadow yshift=-.4ex,opacity=.7,
+	fill=black!50,top color=blue!90!black!50,bottom color=blue!80!black!80,
+	draw=blue!50!black!50,very thick,text=white,text opacity=1]
+	(inbottom) {%
+	\textbf{Интерактивный навчально-методичний посібник}
+	};
+\end{tikzpicture}
+
+\vglue 15pt
+
+\begin{tikzpicture}
+	\node[rectangle,inner sep=2pt,minimum height=3.1ex,rounded corners,
+	drop shadow,shadow scale=1,shadow xshift=.8ex,shadow yshift=-.4ex,opacity=.7,
+	fill=black!50,top color=green!30!black!100,bottom color=green!80!black!80,
+	draw=green!30!black!100,very thick,text=white,text opacity=1]
+	(inbottom) {%
+	\textbf{Интерактивный навчально-методичний посібник}
+	};
+\end{tikzpicture}
+
+\vglue 15pt
+
+\begin{tikzpicture}
+	\node[rectangle,inner sep=2pt,minimum height=3.1ex,rounded corners,
+	drop shadow,shadow scale=1,shadow xshift=.8ex,shadow yshift=-.4ex,opacity=.7,
+	fill=black!50,top color=magenta!30!black!100,bottom color=magenta!80!black!80,
+	draw=magenta!30!black!100,very thick,text=white,text opacity=1]
+	(inbottom) {%
+	\textbf{Интерактивный навчально-методичний посібник}
+	};
+\end{tikzpicture}
+
+\vglue 15pt
+
+\begin{tikzpicture}
+	\node[rectangle,inner sep=2pt,minimum height=3.1ex,rounded corners,
+	drop shadow,shadow scale=1,shadow xshift=.8ex,shadow yshift=-.4ex,opacity=.7,
+	fill=black!50,top color=yellow!30!black!100,bottom color=yellow!80!black!80,
+	draw=yellow!30!black!100,very thick,text=white,text opacity=1]
+	(inbottom) {%
+	\textbf{Интерактивный навчально-методичний посібник}
+	};
+\end{tikzpicture}
+
+\vglue 15pt
+
+\begin{tikzpicture}[rounded corners,ultra thick]
+	\node[rectangle,inner sep=2pt,minimum height=3.1ex,rounded corners,
+	drop shadow,shadow scale=1,shadow xshift=.8ex,shadow yshift=-.4ex,opacity=.7,
+	fill=black!50,top color=yellow,bottom color=yellow,
+	draw=yellow!90!black!30,very thick,text=black,text opacity=1]
+	(inbottom) {%
+	\textbf{Интерактивный навчально-методичний посібник}
+	};
+\end{tikzpicture}
+
+\vglue 15pt
+
+\begin{tikzpicture}[rounded corners,ultra thick]
+	\node[drop shadow,shadow scale=1,shadow xshift=.8ex,
+	shadow yshift=-.4ex,top color=white,bottom color=blue!35,
+	text=black,text opacity=1,rectangle,very thick]
+	(inbottom) {%
+	\textbf{Интерактивный навчально-методичний посібник}
+	};
+	\pattern [path fading=north] ;
+	\pattern [path fading=middle] ;
+\end{tikzpicture}
+
+\vglue 15pt
+
+\begin{tikzpicture}
+	\node[rectangle,path fading=south,text=white] (inbottom) {%
+	{%
+	\mbox{}\hspace{5pt}\textbf{Интерактивный навчально-методичний посібник}
+	\hspace{3pt}\mbox{}}
+	};
+\begin{pgfonlayer}{background}
+\draw[rounded corners,top color=red,bottom color=black,draw=white,drop shadow,
+	shadow scale=1, shadow xshift=.8ex, shadow yshift=-.4ex,
+	opacity=.5, fill=black!50]
+	($(inbottom.north west)+(0.18,0)$) rectangle ($(inbottom.north east)-(0.18,0.6)$);
+%\draw[rounded corners,top color=white,bottom color=black,
+%	middle color=red,draw=blue!20] ($(inbottom.south west) +(0.12,0.5)$)
+%		rectangle ($(inbottom.south east)-(0.12,0)$);
+%\draw[top color=blue!1,bottom color=blue!20,draw=white]
+%	($(inbottom.north east)-(0.13,0.6)$) rectangle ($(inbottom.south west)+(0.13,0.2)$);
+\end{pgfonlayer}
+\end{tikzpicture}
+
+\vglue 15pt
+
+\begin{tikzpicture}
+	\draw [pattern=fivepointed stars]
+		[preaction={fill=black,opacity=.5,
+			transform canvas={xshift=1mm,yshift=-1mm}}]
+		[preaction={top color=blue,bottom color=white}]
+			(0,0) rectangle (1,2)
+				(1,2) circle (5mm);
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	[
+	% Define an interesting style
+		button/.style={
+	% First preaction: Fuzzy shadow
+		preaction={fill=black,path fading=circle with fuzzy edge 20 percent,
+		opacity=.5,transform canvas={xshift=1mm,yshift=-1mm}},
+	% Second preaction: Background pattern
+		preaction={pattern=#1,
+		path fading=circle with fuzzy edge 15 percent},
+	% Third preaction: Make background shiny
+		preaction={top color=white,
+		bottom color=black!50,
+		shading angle=45,
+		path fading=circle with fuzzy edge 15 percent,
+		opacity=0.2},
+	% Fourth preaction: Make edge especially shiny
+		preaction={path fading=fuzzy ring 15 percent,
+		top color=black!5,
+		bottom color=black!80,
+		shading angle=45},
+		inner sep=2ex
+},button/.default=horizontal lines light blue,circle]
+%	\draw [help lines] (0,0) grid (4,3);
+\node [button=crosshatch dots light steel blue,text=white] at (1,1) {\textbf{Пуск}};
+\node [button] at (3,1) {\textbf{Пуск}};
+\node [button=crosshatch dots light steel blue,text=white] at (1,1) {\textbf{Пуск}};
+\end{tikzpicture}
+
+\vglue 15pt
+
+\begin{tikzpicture}[even odd rule,rounded corners=2pt,x=10pt,y=10pt,drop shadow]
+\filldraw[fill=yellow!90!black!40,drop shadow] (0,0)   rectangle (1,1)
+	[xshift=5pt,yshift=5pt]   (0,0)   rectangle (1,1)
+	[rotate=30]   (-1,-1) rectangle (2,2);
+\node at (0,1.7) {\textbf{\thepage}};			      
+\end{tikzpicture}
+
+\vglue 15pt
+\begin{tikzpicture}[
+	nonterminal/.style={
+	% The shape:
+	rectangle,
+	% The size:
+	minimum size=6mm,
+	% The border:
+	very thick,
+	draw=red!50!black!50,         % 50% red and 50% black,
+	% and that mixed with 50% white
+	% The filling:
+	top color=white,              % a shading that is white at the top\ldots
+	bottom color=red!50!black!20, % and something else at the bottom
+	% Font
+	font=\itshape
+}]
+\node [nonterminal] {\textbf{Капранов Олег}};
+\end{tikzpicture}
+
+\vglue 15pt
+
+\tikzfading[name=fade out,inner color=transparent!0,outer color=transparent!100]
+% Now we use the fading in another picture:
+\begin{tikzpicture}
+% Background
+%\fill [black!20] (-1.2,-1.2) rectangle (1.2,1.2);
+%\path [pattern=checkerboard,pattern color=black!30]
+%	(-1.2,-1.2) rectangle (1.2,1.2);
+\fill [blue,path fading=fade out] (-1,-1) rectangle (1,1);
+\end{tikzpicture}
+
+\vglue 15pt
+
+\begin{tikzpicture}
+% Checker board
+%\fill [black!20] (0,0) rectangle (4,4);
+%\path [pattern=checkerboard,pattern color=black!30] (0,0) rectangle (4,4);
+\shade [ball color=blue,path fading=south] (2,2) circle (1.8);
+\end{tikzpicture}
+
+\vglue 15pt
+
+\tikzfading[name=fade inside,inner color=transparent!80,outer color=transparent!30]
+\begin{tikzpicture}
+% Checker board
+%\fill [black!20] (0,0) rectangle (4,4);
+%\path [pattern=checkerboard,pattern color=black!30] (0,0) rectangle (4,4);
+\shade [ball color=red] (3,3) circle (0.8);
+\shade [ball color=white,path fading=fade inside] (2,2) circle (1.8);
+\end{tikzpicture}
+\begin{textblock}{4}(25,0)
+\begin{tikzpicture}[even odd rule,rounded corners=2pt,x=10pt,y=10pt,drop shadow]
+\filldraw[fill=yellow!90!black!40,drop shadow] (0,0)   rectangle (1,1)
+	[xshift=5pt,yshift=5pt]   (0,0)   rectangle (1,1)
+	[rotate=30]   (-1,-1) rectangle (2,2);
+\node at (0,1.7) {\textbf{\thepage}};			      
+\end{tikzpicture}
+\end{textblock}
+
+\pgfmathsetseed{1}
+\foreach \col in {black,red,green,blue}
+{
+\begin{tikzpicture}[x=10pt,y=10pt,ultra thick,baseline,line cap=round]
+	\coordinate (current point) at (0,0);
+	\coordinate (old velocity) at (0,0);
+	\coordinate (new velocity) at (rand,rand);
+	\foreach \i in {0,1,...,100}
+	{
+	\draw[\col!\i] (current point)
+	.. controls ++([scale=-1]old velocity) and
+	++(new velocity) .. ++(rand,rand)
+	coordinate (current point);
+	\coordinate (old velocity) at (new velocity);
+	\coordinate (new velocity) at (rand,rand);
+	}
+\end{tikzpicture}
+}

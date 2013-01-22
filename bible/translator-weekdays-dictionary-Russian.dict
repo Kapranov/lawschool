@@ -1,0 +1,9 @@
+\ProvidesDictionary{translator-weekdays-dictionary}{Russian}
+
+\providetranslation{Monday}{Понедельник}
+\providetranslation{Tuesday}{Вторник}
+\providetranslation{Wednesday}{Среда}
+\providetranslation{Thursday}{Четверг}
+\providetranslation{Friday}{Пятница}
+\providetranslation{Saturday}{Суббота}
+\providetranslation{Sunday}{Воскресенье}

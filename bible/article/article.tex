@@ -1,0 +1,193 @@
+\documentclass[english,russian]{article}
+\usepackage{pscyr}
+\usepackage{ucs}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8x]{inputenc}
+\usepackage[russian]{babel}
+\usepackage[pdftex,usetemplates,nodirectory,russian,%
+unicode,useui,pro,xcolor,usenames,dvipsnames,x11names]{web}
+%%%-----------------------------------------------------------------------
+\usepackage{geometry}
+\usepackage{amssymb,latexsym,amsmath}
+\usepackage{eucal,eufrak,mathrsfs}
+\usepackage{translator}
+\usepackage{texnames}
+\usepackage{pgf,pgfshade}
+\usepackage{xxcolor}
+\usepackage[pdftex]{graphicx}
+\usepackage{pdfpages}
+\usepackage[absolute,overlay]{textpos}
+\usepackage{pstricks}
+\usepackage{pst-blur}
+\usepackage{tikz}
+
+\screensize{10.665in}{14.220in}
+\margins{.25in}{.25in}{120pt}{.01in}
+
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
+
+\usetikzlibrary{calc,patterns,shapes}
+\usetikzlibrary{trees,matrix}
+\usetikzlibrary{positioning,shadows,arrows}
+\usetikzlibrary{calendar}
+\usetikzlibrary{mindmap}
+
+\definecolor{grayfifteen}{gray}{.85}
+\definecolor{logoblue}{rgb}{0,0,0.267}
+\definecolor{monred}{rgb}{0.8 0.9 1} 
+ 
+\def\Black{\color{black}}
+\def\nBlue{\color{buttonshadow}}
+
+\definecolor{myborder}{rgb}{0.8,1,1}
+\definecolor{gray9}{gray}{.9}
+\definecolor{orange}{rgb}{1,.549,0}
+\definecolor{panelbackground}{gray}{.8}
+\definecolor{gray6}{gray}{.4}
+\definecolor{gray3}{gray}{.3}
+\definecolor{boldtxt}{rgb}{0.3,0.3,0.1}
+
+\definecolor{hellgelb}{rgb}{1,1,0.85}
+\definecolor{colkeys}{rgb}{0,0,1}
+\definecolor{colIdentifier}{rgb}{0,0,0}
+\definecolor{colComments}{rgb}{1,0,0}
+\definecolor{colString}{rgb}{0,0.5,0}
+\definecolor{light-blue}{rgb}{0.8,0.85,1}
+\definecolor{mygray}{gray}{0.75}
+\definecolor{grayfifteen}{gray}{.85}
+\definecolor{logoblue}{rgb}{0,0,0.267}
+
+\definecolor{buttonbackground}{rgb}{0,.624,.820}
+\definecolor{buttonshadow}{rgb}{.001,0,.502}
+\definecolor{button}{rgb}{1,.549,.0}
+\definecolor{buttondisable}{gray}{.7}
+
+\pagestyle{empty}
+
+\hypersetup{bookmarksopen=false,
+			pdftex=true,
+			pdfmark=true,
+			linktocpage,
+			colorlinks=true,
+			unicode,
+			linkcolor=magenta,
+			anchorcolor=cyan,
+			citecolor=green,
+			urlcolor=blue,
+			pagecolor=white,
+			bookmarks=false,
+			bookmarksopen=false,
+			pdfcenterwindow=yes,
+			pdfmenubar=false,
+			pdftoolbar=false,
+			pdfpagemode=SinglePage,
+			pdfpagemode=FullScreen,
+			pdfstartpage=10,
+			pdfwindowui=true,
+			pdfpagetransition={/S /Split /D 5 /M /O /Dm /V}
+			%pdfpagetransition={/S /Split /D 5 /M /O /Dm /H}
+			%pdfpagetransition={/S /Wipe /Di /90}
+			}
+
+\newcommand{\Eq}[1]{(\ref{#1})}
+%%%---> Tikz Box create --------------------------------------------------
+\newlength{\boxw}
+\newlength{\boxh}
+\newlength{\shadowsize}
+\newlength{\boxroundness}
+\newlength{\tmpa}
+\newsavebox{\shadowblockbox}
+
+\setlength{\shadowsize}{6pt}
+\setlength{\boxroundness}{3pt}
+
+\newenvironment{shadowblock}[1]%
+{\begin{lrbox}{\shadowblockbox}\begin{minipage}{#1}}%
+{\end{minipage}\end{lrbox}%
+\settowidth{\boxw}{\usebox{\shadowblockbox}}%
+\settodepth{\tmpa}{\usebox{\shadowblockbox}}%
+\settoheight{\boxh}{\usebox{\shadowblockbox}}%
+\addtolength{\boxh}{\tmpa}%
+\begin{tikzpicture}
+    \addtolength{\boxw}{\boxroundness * 2}
+    \addtolength{\boxh}{\boxroundness * 2}
+
+    \foreach \x in {0,.05,...,1}
+    {
+        \setlength{\tmpa}{\shadowsize * \real{\x}}
+        \fill[xshift=\shadowsize - 1pt,yshift=-\shadowsize + 1pt,
+				black,opacity=0.04,rounded corners=\boxroundness]
+            (\tmpa, \tmpa) rectangle +(\boxw - \tmpa - \tmpa,
+                \boxh - \tmpa - \tmpa);
+    }
+
+    \filldraw[left color=blue!50, draw=black!50,thick, rounded corners=\boxroundness]
+        (0, 0) rectangle (\boxw, \boxh);
+    \draw node[xshift=\boxroundness,yshift=\boxroundness,
+        inner sep=0pt,outer sep=0pt,anchor=south west]
+             (0,0) {\usebox{\shadowblockbox}};
+\end{tikzpicture}}
+
+\newenvironment{shadowblockb}[1]%
+{\begin{lrbox}{\shadowblockbox}\begin{minipage}{#1}}%
+{\end{minipage}\end{lrbox}%
+\settowidth{\boxw}{\usebox{\shadowblockbox}}%
+\settodepth{\tmpa}{\usebox{\shadowblockbox}}%
+\settoheight{\boxh}{\usebox{\shadowblockbox}}%
+\addtolength{\boxh}{\tmpa}%
+\begin{tikzpicture}
+    \addtolength{\boxw}{\boxroundness * 2}
+    \addtolength{\boxh}{\boxroundness * 2}
+
+    \foreach \x in {0,.05,...,1}
+    {
+        \setlength{\tmpa}{\shadowsize * \real{\x}}
+        \fill[xshift=\shadowsize - 1pt,yshift=-\shadowsize + 1pt,
+				black,opacity=.04,rounded corners=\boxroundness]
+            (\tmpa, \tmpa) rectangle +(\boxw - \tmpa - \tmpa,
+                \boxh - \tmpa - \tmpa);
+    }
+
+    \filldraw[color=yellow!50, draw=black!50, rounded corners=\boxroundness]
+        (0, 0) rectangle (\boxw, \boxh);
+    \draw node[xshift=\boxroundness,yshift=\boxroundness,
+        inner sep=0pt,outer sep=0pt,anchor=south west]
+             (0,0) {\usebox{\shadowblockbox}};
+\end{tikzpicture}}
+\begin{document}
+\newcommand{\logo}[5]
+{
+ 	\colorlet{border}{#1}
+ 	\colorlet{trunk}{#2}
+ 	\colorlet{leaf a}{#3}
+ 	\colorlet{leaf b}{#4}
+ 	\begin{tikzpicture}
+ 	\scriptsize\scshape
+ 	\draw[border,line width=1ex,yshift=.3cm,
+ 	yscale=1.45,xscale=1.05,looseness=1.42]
+ 	(1,0) to [out=90, in=0] (0,1) to [out=180,in=90] (-1,0)
+ 	to [out=-90,in=-180] (0,-1) to [out=0, in=-90] (1,0) -- cycle;
+ 	\coordinate (root) [grow cyclic,rotate=90]
+ 	child {
+ 		child [line cap=round] foreach \a in {0,1} {
+ 			child foreach \b in {0,1} {
+ 				child foreach \c in {0,1} {
+ 					child foreach \d in {0,1} {
+ 						child foreach \leafcolor in {leaf a,leaf b}
+ 						{ edge from parent [color=\leafcolor,-#5] }
+ 					} } }
+ 		} edge from parent [shorten >=-1pt,serif cm-,line cap=butt]
+ 	};
+ 	\node [align=center,below] at (0pt,-.5ex)
+ 	{ \textcolor{border}{L}uga\TeX \\ \textcolor{border}{I}nteractive \\
+ 	   \textcolor{border}{S}ystem };
+ 	\end{tikzpicture}
+}
+%%%-----------------------------------------------------------------------
+%%%-----------------------------------------------------------------------
+%\include{articles-01}
+\include{articles-02}
+\end{document}
+%%%-----------------------------------------------------------------------

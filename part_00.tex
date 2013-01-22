@@ -1,0 +1,518 @@
+\documentclass[english,russian]{article}
+\usepackage{pscyr}
+\usepackage{ucs}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8x]{inputenc}
+\usepackage[russian]{babel}
+\usepackage[pdftex,usetemplates,nodirectory,russian,%
+unicode,useui,pro,xcolor,usenames,dvipsnames,x11names]{web}
+%%%-----------------------------------------------------------------------
+\usepackage[pdftex,execJS]{insdljs}
+\usepackage{aeb_tilebg}
+\usepackage[pdftex]{attachfile2}
+\usepackage{geometry}
+\usepackage{translator}
+\usepackage{amssymb,latexsym,amsmath}
+\usepackage{eucal,eufrak,mathrsfs}
+\usepackage{tipa}
+\usepackage{texnames}
+\usepackage{textcomp}
+\usepackage{setspace}
+\usepackage{tabularx}
+\usepackage{colortbl}
+\usepackage{booktabs}
+\usepackage{pgf,pgfshade}
+\usepackage{pgfmath}
+\usepackage{xxcolor}
+\usepackage{marvosym}
+\usepackage{url}
+\usepackage{lipsum}
+\usepackage{marginnote}
+\usepackage[pdftex]{graphicx}
+\usepackage[filename=articles,mouseover]{fancytooltips}
+\usepackage{pdfcomment}
+\usepackage{pdfpages}
+\usepackage{cooltooltips}
+\usepackage{ifthen}
+\usepackage{animate}
+\usepackage{ocg}
+\usepackage[colorinlistoftodos, shadow]{todonotes}
+\usepackage[absolute,overlay]{textpos}
+%%%---> don't work with tikz
+%%% \usepackage[3D,final]{movie15}
+\usepackage{pstricks}
+\usepackage{pst-blur}
+\usepackage{tikz}
+%%%-----------------------------------------------------------------------
+\def\delayinterval{3000}
+%%%-----------------------------------------------------------------------
+%%%--> \screensize{<height>}{<width>}
+%\screensize{4.72in}{5.67in}
+\screensize{10.665in}{14.220in}
+%%%---> \margins[<panel_width>]{<left>}{<right>}{<top>}{<bottom>}
+\margins{.25in}{.25in}{120pt}{.15in}
+
+%\geometry{left=5mm}	% левое поле
+%\geometry{right=5mm}	% правое поле
+%\geometry{top=15mm}	% верхнее поле
+%\geometry{bottom=5mm}	% нижнее поле
+
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
+
+%\usetikzlibrary{snakes,backgrounds}
+\usetikzlibrary{calc,patterns,shapes}
+\usetikzlibrary{trees,matrix}
+\usetikzlibrary{positioning,arrows}
+\usetikzlibrary{shadows}
+\usetikzlibrary{calendar}
+\usetikzlibrary{mindmap}
+\usetikzlibrary{patterns}
+\usetikzlibrary{decorations.text}
+\usetikzlibrary{decorations.shapes}
+\usetikzlibrary{decorations.text}
+\usetikzlibrary{decorations.footprints}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{folding}
+%%%------------------------------------------------------------------------
+\sectionLayout{%
+	afterskip=12pt,
+	halign=c,
+	color=blue,
+	shadowcolor=blue
+}
+%%%-----------------------------------------------------------------------
+\definecolor{myborder}{rgb}{0.8,1,1}
+\definecolor{gray9}{gray}{.9}
+\definecolor{orange}{rgb}{1,.549,0}
+\definecolor{panelbackground}{gray}{.8}
+\definecolor{gray6}{gray}{.4}
+\definecolor{gray3}{gray}{.3}
+\definecolor{boldtxt}{rgb}{0.3,0.3,0.1}
+
+\definecolor{hellgelb}{rgb}{1,1,0.85}
+\definecolor{colkeys}{rgb}{0,0,1}
+\definecolor{colIdentifier}{rgb}{0,0,0}
+\definecolor{colComments}{rgb}{1,0,0}
+\definecolor{colString}{rgb}{0,0.5,0}
+\definecolor{light-blue}{rgb}{0.8,0.85,1}
+\definecolor{mygray}{gray}{0.75}
+\definecolor{grayfifteen}{gray}{.85}
+\definecolor{logoblue}{rgb}{0,0,0.267}
+
+\definecolor{buttonbackground}{rgb}{0,.624,.820}
+\definecolor{buttonshadow}{rgb}{.001,0,.502}
+\definecolor{button}{rgb}{1,.549,.0}
+\definecolor{buttondisable}{gray}{.7}
+
+\definecolor{grayfifteen}{gray}{.85}
+\definecolor{logoblue}{rgb}{0,0,0.267}
+\definecolor{monred}{rgb}{0.8 0.9 1} 
+
+\def\Black{\color{black}}
+\def\nBlue{\color{buttonshadow}}
+%%%-----------------------------------------------------------------------
+\pagestyle{empty}
+%%%-----------------------------------------------------------------------
+\hypersetup{bookmarksopen=false,
+			pdftex=true,
+			pdfmark=true,
+			linktocpage,
+			colorlinks=true,
+			unicode,
+			linkcolor=black,
+			anchorcolor=cyan,
+			citecolor=green,
+			urlcolor=blue,
+			pagecolor=white,
+			bookmarks=false,
+			bookmarksopen=false,
+			pdfcenterwindow=yes,
+			pdfmenubar=false,
+			pdftoolbar=false,
+			pdfpagemode=SinglePage,
+			pdfpagemode=FullScreen,
+			pdfstartpage=10,
+			pdfwindowui=true,
+			pdfpagetransition={/S /Split /D 5 /M /O /Dm /V}
+			%pdfpagetransition={/S /Split /D 5 /M /O /Dm /H}
+			%pdfpagetransition={/S /Wipe /Di /90}
+			}
+%%%-----------------------------------------------------------------------
+\graphicspath{{./img/}} 
+%%%-----------------------------------------------------------------------
+\newcommand{\Eq}[1]{(\ref{#1})}
+%%%---> Tikz Box create --------------------------------------------------
+\newlength{\boxw}
+\newlength{\boxh}
+\newlength{\shadowsize}
+\newlength{\boxroundness}
+\newlength{\tmpa}
+\newsavebox{\shadowblockbox}
+
+\setlength{\shadowsize}{6pt}
+\setlength{\boxroundness}{3pt}
+
+\newenvironment{shadowblock}[1]%
+{\begin{lrbox}{\shadowblockbox}\begin{minipage}{#1}}%
+{\end{minipage}\end{lrbox}%
+\settowidth{\boxw}{\usebox{\shadowblockbox}}%
+\settodepth{\tmpa}{\usebox{\shadowblockbox}}%
+\settoheight{\boxh}{\usebox{\shadowblockbox}}%
+\addtolength{\boxh}{\tmpa}%
+\begin{tikzpicture}
+    \addtolength{\boxw}{\boxroundness * 2}
+    \addtolength{\boxh}{\boxroundness * 2}
+
+    \foreach \x in {0,.05,...,1}
+    {
+        \setlength{\tmpa}{\shadowsize * \real{\x}}
+        \fill[xshift=\shadowsize - 1pt,yshift=-\shadowsize + 1pt,
+				black,opacity=0.04,rounded corners=\boxroundness]
+            (\tmpa, \tmpa) rectangle +(\boxw - \tmpa - \tmpa,
+                \boxh - \tmpa - \tmpa);
+    }
+
+    \filldraw[left color=blue!50, draw=black!50,thick, rounded corners=\boxroundness]
+        (0, 0) rectangle (\boxw, \boxh);
+    \draw node[xshift=\boxroundness,yshift=\boxroundness,
+        inner sep=0pt,outer sep=0pt,anchor=south west]
+             (0,0) {\usebox{\shadowblockbox}};
+\end{tikzpicture}}
+
+\newenvironment{shadowblockb}[1]%
+{\begin{lrbox}{\shadowblockbox}\begin{minipage}{#1}}%
+{\end{minipage}\end{lrbox}%
+\settowidth{\boxw}{\usebox{\shadowblockbox}}%
+\settodepth{\tmpa}{\usebox{\shadowblockbox}}%
+\settoheight{\boxh}{\usebox{\shadowblockbox}}%
+\addtolength{\boxh}{\tmpa}%
+\begin{tikzpicture}
+    \addtolength{\boxw}{\boxroundness * 2}
+    \addtolength{\boxh}{\boxroundness * 2}
+
+    \foreach \x in {0,.05,...,1}
+    {
+        \setlength{\tmpa}{\shadowsize * \real{\x}}
+        \fill[xshift=\shadowsize - 1pt,yshift=-\shadowsize + 1pt,
+				black,opacity=.04,rounded corners=\boxroundness]
+            (\tmpa, \tmpa) rectangle +(\boxw - \tmpa - \tmpa,
+                \boxh - \tmpa - \tmpa);
+    }
+
+    \filldraw[color=yellow!50, draw=black!50, rounded corners=\boxroundness]
+        (0, 0) rectangle (\boxw, \boxh);
+    \draw node[xshift=\boxroundness,yshift=\boxroundness,
+        inner sep=0pt,outer sep=0pt,anchor=south west]
+             (0,0) {\usebox{\shadowblockbox}};
+\end{tikzpicture}}
+%%%-----------------------------------------------------------------------
+%%%---> Tikz tables matrix
+\newcommand*\up{\textcolor{green}{\ensuremath{\blacktriangle}}}
+\newcommand*\down{\textcolor{red}{\ensuremath{\blacktriangledown}}}
+\newcommand*\const{\textcolor{darkgray}{\textbf{--}}}
+\newcommand*\head[1]{\textbf{#1}}
+\newenvironment{matrixtable}[2]{%
+  \begin{tikzpicture}[matrix of nodes/.style={
+    execute at begin cell=\node\bgroup\strut,
+    execute at end cell=\egroup;}]
+  \matrix (m) [matrix of nodes,top color=blue!20,
+    bottom color=blue!80,draw=white,
+    nodes={draw,top color=blue!10,bottom color=blue!35,
+    draw,inner sep=2pt,minimum height=3.1ex},
+    column sep=1ex,row sep=0.6ex,inner sep=2ex,
+    rounded corners,column 1/.style={minimum width=#1},
+	column 2/.style={minimum width=#2}]}
+%    column 3/.style={minimum width=#3},
+%   column 4/.style={minimum width=#4}]}%
+{;\end{tikzpicture}}
+%%%-----------------------------------------------------------------------
+%\newcommand*\up{\textcolor{green}{%
+%	\ensuremath{\blacktriangle}}}
+%\newcommand*\down{\textcolor{red}{%
+%	\ensuremath{\blacktriangledown}}}
+%\newcommand*\const{\textcolor{darkgray}{\textbf{--}}}	
+%%%-----------------------------------------------------------------------
+%\newcommand\lawordercover
+%{%
+%	\parbox[b][\paperheight][c]{\textscreenwidth}%
+%	%
+%	{\centering\includegraphics[width=\paperwidth,height=\paperheight]{%
+%	./img/laworder_bg_01}}%
+%}
+%%%-----------------------------------------------------------------------
+\newcommand\lawordercover
+{%
+	\put(0,633){\includegraphics[scale=0.99]{./laworder_bg_01}}
+}
+%\AddToTemplate{lawordercover}
+%%%-----------------------------------------------------------------------
+%\setTileBgGraphic[scale=0.9]{title_01}
+%%%---> That's fine
+%\setTileBgGraphic[scale=0.99]{title_01}
+\setTileBgGraphic[scale=2.99]{title_41}
+\maxiterations{17}
+%\setTileBgGraphic[scale=0.49]{title_70}
+%\maxiterations{17}
+%\setTileBgGraphic[scale=0.39]{title_30}
+%\maxiterations{27}
+%\setTileBgGraphic[scale=0.39]{title_31}
+%\maxiterations{27}
+%\setTileBgGraphic[scale=0.49]{title_04}
+%\maxiterations{27}
+%%%-----------------------------------------------------------------------
+\newcommand\covers
+{%
+	\parbox[b][\paperheight][c]{\textscreenwidth}%
+		%
+		{\centering\includegraphics[width=\paperwidth,height=\paperheight]{%
+			./img/ready_05}}%
+}
+\newcommand\susebgcard
+{%
+	\parbox[b][\paperheight][c]{\textscreenwidth}%
+		%
+		{\centering\includegraphics[width=\paperwidth,height=\paperheight]{%
+			./img/ready_06}}%
+}
+
+%%%-----------------------------------------------------------------------
+\graphicspath{{./img/}} 
+%%%-----------------------------------------------------------------------
+\begin{document}
+%\AddToTemplate{lawordercover}
+%%%-------------------- Logo LugaTeX Interactive -------------------------
+\newcommand{\logo}[5]
+{
+ 	\colorlet{border}{#1}
+ 	\colorlet{trunk}{#2}
+ 	\colorlet{leaf a}{#3}
+ 	\colorlet{leaf b}{#4}
+ 	\begin{tikzpicture}
+ 	\scriptsize\scshape
+ 	\draw[border,line width=1ex,yshift=.3cm,
+ 	yscale=1.45,xscale=1.05,looseness=1.42]
+ 	(1,0) to [out=90, in=0] (0,1) to [out=180,in=90] (-1,0)
+ 	to [out=-90,in=-180] (0,-1) to [out=0, in=-90] (1,0) -- cycle;
+ 	\coordinate (root) [grow cyclic,rotate=90]
+ 	child {
+ 		child [line cap=round] foreach \a in {0,1} {
+ 			child foreach \b in {0,1} {
+ 				child foreach \c in {0,1} {
+ 					child foreach \d in {0,1} {
+ 						child foreach \leafcolor in {leaf a,leaf b}
+ 						{ edge from parent [color=\leafcolor,-#5] }
+ 					} } }
+ 		} edge from parent [shorten >=-1pt,serif cm-,line cap=butt]
+ 	};
+ 	\node [align=center,below] at (0pt,-.5ex)
+ 	{ \textcolor{border}{L}uga\TeX \\ \textcolor{border}{I}nteractive \\
+ 	   \textcolor{border}{S}ystem };
+ 	\end{tikzpicture}
+}
+%%%-----------------------------------------------------------------------
+%%%---> icon book
+\newcommand{\iconbook}{%
+\begin{colormixin}{130}%
+  \pgfdeclarehorizontalshading{cover}{20pt}{%
+    rgb(0pt)=(0.84,.5,.5);
+    rgb(1.8pt)=(0.82,.48,.48);
+    rgb(1.9pt)=(0.83,.66,.65);
+    rgb(2.1pt)=(0.83,.66,.65);
+    rgb(3pt)=(0.69,.25,.3);
+    rgb(8pt)=(0.45,0.05,0.05)}%
+                                %
+  \pgfdeclareverticalshading{side}{10pt}{%
+    rgb(0pt)=(0.78,.78,.78);
+    rgb(2.5pt)=(0.60,.60,.60);
+    rgb(5pt)=(0.25,.25,.25)}%
+  \noindent\hbox{%
+    \begin{pgfpicture}{0pt}{1pt}{14pt}{11pt}
+      \pgfsetxvec{\pgfpoint{1pt}{0pt}}
+      \pgfsetyvec{\pgfpoint{0pt}{1pt}}
+      \pgfsetlinewidth{0.4pt}
+      \pgfsetroundjoin
+      
+      \pgfsetlinewidth{0.8pt}
+      \color[gray]{0.5}
+      \pgfmoveto{\pgfxy(6.5,11.5)}
+      \pgflineto{\pgfxy(1,10.5)}
+      \pgfcurveto{\pgfxy(0.6,9.75)}{\pgfxy(0.6,8.75)}{\pgfxy(1,8)}
+      \pgflineto{\pgfxy(6.5,2)}
+      \pgflineto{\pgfxy(13,3)}
+      \pgfcurveto{\pgfxy(12,4)}{\pgfxy(12,5)}{\pgfxy(13,6)}
+      \pgfclosepath
+      
+      \pgfmoveto{\pgfxy(6.5,2)}  
+      \pgfcurveto{\pgfxy(6,3)}{\pgfxy(6,4)}{\pgfxy(6.5,5)}
+      \pgflineto{\pgfxy(13,6)}
+      \pgfstroke
+
+      \begin{pgfscope}
+        \pgfmoveto{\pgfxy(6.5,11.5)}
+        \pgflineto{\pgfxy(1,10.5)}
+        \pgfcurveto{\pgfxy(0.6,9.75)}{\pgfxy(0.6,8.75)}{\pgfxy(1,8)}
+        \pgflineto{\pgfxy(6.5,2)}
+        \pgfcurveto{\pgfxy(6,3)}{\pgfxy(6,4)}{\pgfxy(6.5,5)}
+        \pgflineto{\pgfxy(13,6)}
+        \pgfclosepath
+        \pgfclip
+
+        \pgfputat{\pgfxy(8.5,0)}
+        {%
+          \begin{pgfrotateby}{\pgfdegree{45}}
+            \pgfbox[left,base]{\pgfuseshading{cover}}
+          \end{pgfrotateby}
+        }
+      \end{pgfscope}      
+      
+      \begin{pgfscope}
+        \pgfmoveto{\pgfxy(6.5,2)}  
+        \pgfcurveto{\pgfxy(6,3)}{\pgfxy(6,4)}{\pgfxy(6.5,5)}
+        \pgflineto{\pgfxy(13,6)}
+        \pgfcurveto{\pgfxy(12,5)}{\pgfxy(12,4)}{\pgfxy(13,3)}
+        \pgfclosepath
+        \pgfclip
+
+        \pgfputat{\pgfxy(7.5,0)}
+        {%
+          \begin{pgfrotateby}{\pgfdegree{30}}
+            \pgfbox[left,base]{\pgfuseshading{side}}
+          \end{pgfrotateby}
+        }
+      \end{pgfscope}      
+      
+      \pgfsetlinewidth{0.4pt}
+      \color[gray]{0.2}
+      \pgfmoveto{\pgfxy(6.5,11.5)}
+      \pgflineto{\pgfxy(1,10.5)}
+      \pgfcurveto{\pgfxy(0.6,9.75)}{\pgfxy(0.6,8.75)}{\pgfxy(1,8)}
+      \pgflineto{\pgfxy(6.5,2)}
+      \pgflineto{\pgfxy(13,3)}
+      \pgfcurveto{\pgfxy(12,4)}{\pgfxy(12,5)}{\pgfxy(13,6)}
+      \pgfclosepath
+      
+      \pgfmoveto{\pgfxy(6.5,2)}  
+      \pgfcurveto{\pgfxy(6,3)}{\pgfxy(6,4)}{\pgfxy(6.5,5)}
+      \pgflineto{\pgfxy(13,6)}
+      \pgfstroke
+    \end{pgfpicture}%
+  }%
+\end{colormixin}%
+}
+%%%---> icon article
+\newcommand{\iconarticle}{%
+\begin{colormixin}{20}%
+  \pgfdeclareverticalshading{shadow}{20pt}{%
+    rgb(0pt)=(.2,.2,.2);
+    rgb(11pt)=(1,1,1)}%
+  \pgfdeclareverticalshading{paper}{20pt}{%
+    rgb(0pt)=(0.8,0.8,0.5);
+    rgb(15pt)=(1,1,1)}%
+  \pgfdeclareverticalshading{pic}{2.5pt}{%
+    rgb(0pt)=(0.25,0.75,0.25);
+    rgb(1.5pt)=(0.75,0.25,0.25);
+    rgb(3.5pt)=(0.25,0.25,0.75)}%
+  \pgfdeclareverticalshading{corner}{2pt}{%
+    rgb(0pt)=(0.5,0.5,0);
+    rgb(2pt)=(0.8,0.8,0.8)}%
+  \noindent\hbox{%
+    \begin{pgfpicture}{-1pt}{-2pt}{10pt}{12pt}
+      \pgfsetxvec{\pgfpoint{1pt}{0pt}}
+      \pgfsetyvec{\pgfpoint{0pt}{1pt}}
+      \pgfsetlinewidth{0.4pt}
+
+                                %    \begin{pgfscope}
+                                %      \color[gray]{0.7}
+                                %      \pgfmoveto{\pgfxy(0.6,-1)}
+                                %      \pgflineto{\pgfxy(9,-1)}
+                                %      \pgflineto{\pgfxy(9,8.2)}
+                                %      \pgflineto{\pgfxy(6.8,10.4)}
+                                %      \pgflineto{\pgfxy(0.6,10.4)}
+                                %      \pgfclip
+
+                                %      \pgfputat{\pgfxy(0.6,-10)}
+                                %      {%
+                                %        \begin{pgfrotateby}{\pgfdegree{45}}
+                                %          \pgfbox[left,base]{\pgfuseshading{shadow}}
+                                %        \end{pgfrotateby}
+                                %      }
+                                %    \end{pgfscope}      
+
+      \begin{pgfscope}
+        \pgfmoveto{\pgfxy(0,0)}
+        \pgflineto{\pgfxy(8,0)}
+        \pgflineto{\pgfxy(8,9)}
+        \pgflineto{\pgfxy(6,9)}
+        \pgflineto{\pgfxy(6,11)}
+        \pgflineto{\pgfxy(0,11)}
+        \pgfclip
+
+        \pgfputat{\pgfxy(0,-10)}
+        {%
+          \begin{pgfrotateby}{\pgfdegree{45}}
+            \pgfbox[left,base]{\pgfuseshading{paper}}
+          \end{pgfrotateby}
+        }
+      \end{pgfscope}
+      
+      \begin{pgfscope}
+        \pgfmoveto{\pgfxy(8,9)}
+        \pgflineto{\pgfxy(6,9)}
+        \pgflineto{\pgfxy(6,11)}
+        \pgfclip
+
+        \pgfputat{\pgfxy(6,9)}{\pgfbox[left,base]{\pgfuseshading{corner}}}
+      \end{pgfscope}
+
+      \pgfmoveto{\pgfxy(0,0)}
+      \pgflineto{\pgfxy(8,0)}
+      \pgflineto{\pgfxy(8,9)}
+      \pgflineto{\pgfxy(6,11)}
+      \pgflineto{\pgfxy(0,11)}
+      \pgfclosepath
+      \pgfstroke
+      
+      \color[gray]{0.5}
+      \pgfxyline(1,9.5)(6,9.5)
+      \color[gray]{0.6}
+      \pgfxyline(2,8)(6,8)
+      \pgfxyline(2,7)(6,7)
+      
+      \color[gray]{0.7}
+      \pgfxyline(1,5.5)(3.5,5.5)
+      \pgfxyline(1,4.5)(3.5,4.5)
+      \pgfxyline(1,3.5)(3.5,3.5)
+      \pgfxyline(1,2.5)(3.5,2.5)
+      \pgfxyline(1,1.5)(3.5,1.5)
+
+      \pgfputat{\pgfxy(4.5,2.25)}{\pgfbox[left,base]{\pgfuseshading{pic}}}
+      \pgfxyline(4.5,1.5)(7,1.5)
+
+      \color{black}
+      \pgfmoveto{\pgfxy(8,9)}
+      \pgflineto{\pgfxy(6,9)}
+      \pgflineto{\pgfxy(6,11)}
+      \pgfstroke
+    \end{pgfpicture}%
+  }%
+\end{colormixin}%
+}
+%%%-----------------------------------------------------------------------
+%\multido{\i=1+1}{1}{\null\newpage}
+\AddToTemplate{covers}
+\AddToTemplate{lawordercover}
+\include{part_01}
+\include{part_02}
+%%%--->\include{test_01}
+\include{part_03}
+\include{part_04}
+\include{part_05}
+\include{part_06}
+\include{part_07}
+\include{part_08}
+\include{part_09}
+\include{part_10}
+\end{document}
+%%%-----------------------------------------------------------------------

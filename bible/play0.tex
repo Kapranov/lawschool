@@ -1,0 +1,36 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{multido}
+\usepackage{pstricks,pst-xkey}
+\makeatletter
+\define@key[psset]{}{rotAngle}{\pst@getangle{#1}\psk@rotAngle }
+\psset{rotAngle=0}
+%
+\def\quadrat{\pst@object{quadrat}}
+\def\quadrat@i#1{%
+   \pssetlength\pst@dima{#1}	  % save argument as length
+   \begin@ClosedObj               % start closed object
+   \addto@pscode{                 % begin PS code
+     \psk@rotAngle rotate 	  % set rotating angle
+     0 0 moveto                   % goto origin (current point)
+     /s \pst@number\pst@dima def  % set width
+     s 0 rlineto                  % draw first side relative
+     0 s rlineto                  % up
+     s neg 0 rlineto   		  % left
+     0 s neg rlineto              % down
+   }% 				    restore old state
+   \end@ClosedObj% 		    end closed object
+}
+\makeatother
+\pagestyle{empty}
+\begin{document}
+\vspace*{5cm}
+\multido{\iA=0+10,\iC=100+-2}{50}{%
+  \quadrat[linecolor=white,fillcolor={blue!\iC},fillstyle=solid,opacity=0.4,rotAngle=\iA]{3cm}~}
+
+\end{document}
+
+
+-- 
+LaTeX und Perl in der ZEDAT: http://userpage.fu-berlin.de/~latex
+
+

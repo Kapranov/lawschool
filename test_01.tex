@@ -1,0 +1,113 @@
+\newpage
+\AddToTemplate{lawordercover}
+\enableTiling
+\begin{textblock}{67}(25,-0.01)
+%\begin{textblock}{5}(25,0)
+\begin{tikzpicture}[even odd rule,rounded corners=2pt,x=10pt,y=10pt,drop shadow]
+\filldraw[fill=yellow!90!black!40,drop shadow] (0,0)   rectangle (1,1)
+	[xshift=5pt,yshift=5pt]   (0,0)   rectangle (1,1)
+	[rotate=30]   (-1,-1) rectangle (2,2);
+\node at (0,1.7) {\textbf{\thepage}};			      
+\end{tikzpicture}
+\end{textblock}
+%%%--- Navigational panel top page
+\begin{textblock}{68}(7.58,0.85)
+\mbox{%%%--->
+\tikz[baseline] \node[rectangle,inner sep=2pt,minimum height=3.1ex,
+rounded corners,drop shadow,shadow scale=1,shadow xshift=.8ex,
+shadow yshift=-.4ex,opacity=.7,fill=black!50,top color=red!90!black!50,
+bottom color=red!80!black!80,draw=red!50!black!50,very thick,text=white,
+text opacity=1,minimum width=3cm,font=\bfseries\sffamily] at (0,0) {К концу};
+\tikz[baseline] \node[rectangle,inner sep=2pt,minimum height=3.1ex,
+rounded corners,drop shadow,shadow scale=1,shadow xshift=.8ex,
+shadow yshift=-.4ex,opacity=.7,fill=black!50,top color=red!90!black!50,
+bottom color=red!80!black!80,draw=red!50!black!50,very thick,text=white,
+text opacity=1,minimum width=3cm,font=\bfseries\sffamily] at (4,0) {Назад};
+\tikz[baseline] \node[rectangle,inner sep=2pt,minimum height=3.1ex,
+rounded corners,drop shadow,shadow scale=1,shadow xshift=.8ex,
+shadow yshift=-.4ex,opacity=.7,fill=black!50,top color=red!90!black!50,
+bottom color=red!80!black!80,draw=red!50!black!50,very thick,text=white,
+text opacity=1,minimum width=3cm,font=\bfseries\sffamily] at (8,0) {Предыдущий};
+\tikz[baseline] \node[rectangle,inner sep=2pt,minimum height=3.1ex,
+rounded corners,drop shadow,shadow scale=1,shadow xshift=.8ex,
+shadow yshift=-.4ex,opacity=.7,fill=black!50,top color=red!90!black!50,
+bottom color=red!80!black!80,draw=red!50!black!50,very thick,text=white,
+text opacity=1,minimum width=3cm,font=\bfseries\sffamily] at (12,0) {Следующий};
+\tikz[baseline] \node[rectangle,inner sep=2pt,minimum height=3.1ex,
+rounded corners,drop shadow,shadow scale=1,shadow xshift=.8ex,
+shadow yshift=-.4ex,opacity=.7,fill=black!50,top color=red!90!black!50,
+bottom color=red!80!black!80,draw=red!50!black!50,very thick,text=white,
+text opacity=1,minimum width=3cm,font=\bfseries\sffamily] at (16,0) {Вперед};
+\tikz[baseline] \node[rectangle,inner sep=2pt,minimum height=3.1ex,
+rounded corners,drop shadow,shadow scale=1,shadow xshift=.8ex,
+shadow yshift=-.4ex,opacity=.7,fill=black!50,top color=red!90!black!50,
+bottom color=red!80!black!80,draw=red!50!black!50,very thick,text=white,
+text opacity=1,minimum width=3cm,font=\bfseries\sffamily] at (20,0) {К началу};
+\tikz[baseline] \node[rectangle,inner sep=2pt,minimum height=3.1ex,
+rounded corners,drop shadow,shadow scale=1,shadow xshift=.8ex,
+shadow yshift=-.4ex,opacity=.7,fill=black!50,top color=red!90!black!50,
+bottom color=red!80!black!80,draw=red!50!black!50,very thick,text=white,
+text opacity=1,minimum width=3cm,font=\bfseries\sffamily] at (24,0) {Полный экран};
+\tikz[baseline] \node[rectangle,inner sep=2pt,minimum height=3.1ex,
+rounded corners,drop shadow,shadow scale=1,shadow xshift=.8ex,
+shadow yshift=-.4ex,opacity=.7,fill=black!50,top color=red!90!black!50,
+bottom color=red!80!black!80,draw=red!50!black!50,very thick,text=white,
+text opacity=1,minimum width=3cm,font=\bfseries\sffamily] at (28,0) {Выход};
+}%%%---|
+\end{textblock}
+%%%----------------------------------------------------------------------|
+\begin{center}
+\Acrobatmenu{LastPage}{%
+\tikz[baseline] \node[rectangle,inner sep=2pt,minimum height=3.1ex,
+rounded corners,drop shadow,shadow scale=1,shadow xshift=.8ex,
+shadow yshift=-.4ex,opacity=.7,fill=black!50,top color=red!90!black!50,
+bottom color=red!80!black!80,draw=red!50!black!50,very thick,text=white,
+text opacity=1,minimum width=3cm,font=\bfseries\sffamily] at (0,0) {К концу};
+}\Acrobatmenu{GoBack}{%
+\tikz[baseline] \node[rectangle,inner sep=2pt,minimum height=3.1ex,
+rounded corners,drop shadow,shadow scale=1,shadow xshift=.8ex,
+shadow yshift=-.4ex,opacity=.7,fill=black!50,top color=red!90!black!50,
+bottom color=red!80!black!80,draw=red!50!black!50,very thick,text=white,
+text opacity=1,minimum width=3cm,font=\bfseries\sffamily] at (4,0) {Назад};
+}\Acrobatmenu{PrevPage}{%
+\tikz[baseline] \node[rectangle,inner sep=2pt,minimum height=3.1ex,
+rounded corners,drop shadow,shadow scale=1,shadow xshift=.8ex,
+shadow yshift=-.4ex,opacity=.7,fill=black!50,top color=red!90!black!50,
+bottom color=red!80!black!80,draw=red!50!black!50,very thick,text=white,
+text opacity=1,minimum width=3cm,font=\bfseries\sffamily] at (8,0) {Предыдущий};
+}\Acrobatmenu{NextPage}{%
+\tikz[baseline] \node[rectangle,inner sep=2pt,minimum height=3.1ex,
+rounded corners,drop shadow,shadow scale=1,shadow xshift=.8ex,
+shadow yshift=-.4ex,opacity=.7,fill=black!50,top color=red!90!black!50,
+bottom color=red!80!black!80,draw=red!50!black!50,very thick,text=white,
+text opacity=1,minimum width=3cm,font=\bfseries\sffamily] at (12,0) {Следующий};
+}\Acrobatmenu{GoForward}{%
+\tikz[baseline] \node[rectangle,inner sep=2pt,minimum height=3.1ex,
+rounded corners,drop shadow,shadow scale=1,shadow xshift=.8ex,
+shadow yshift=-.4ex,opacity=.7,fill=black!50,top color=red!90!black!50,
+bottom color=red!80!black!80,draw=red!50!black!50,very thick,text=white,
+text opacity=1,minimum width=3cm,font=\bfseries\sffamily] at (16,0) {Вперед};
+}\Acrobatmenu{FirstPage}{%
+\tikz[baseline] \node[rectangle,inner sep=2pt,minimum height=3.1ex,
+rounded corners,drop shadow,shadow scale=1,shadow xshift=.8ex,
+shadow yshift=-.4ex,opacity=.7,fill=black!50,top color=red!90!black!50,
+bottom color=red!80!black!80,draw=red!50!black!50,very thick,text=white,
+text opacity=1,minimum width=3cm,font=\bfseries\sffamily] at (20,0) {К началу};
+}\Acrobatmenu{FullScreen}{%
+\tikz[baseline] \node[rectangle,inner sep=2pt,minimum height=3.1ex,
+rounded corners,drop shadow,shadow scale=1,shadow xshift=.8ex,
+shadow yshift=-.4ex,opacity=.7,fill=black!50,top color=red!90!black!50,
+bottom color=red!80!black!80,draw=red!50!black!50,very thick,text=white,
+text opacity=1,minimum width=3cm,font=\bfseries\sffamily] at (24,0) {Полный экран};
+}\Acrobatmenu{Quit}{%
+\tikz[baseline] \node[rectangle,inner sep=2pt,minimum height=3.1ex,
+rounded corners,drop shadow,shadow scale=1,shadow xshift=.8ex,
+shadow yshift=-.4ex,opacity=.7,fill=black!50,top color=red!90!black!50,
+bottom color=red!80!black!80,draw=red!50!black!50,very thick,text=white,
+text opacity=1,minimum width=3cm,font=\bfseries\sffamily] at (28,0) {Выход};
+}	
+\end{center}	
+
+
+
+ПРИВЕТ !!!!

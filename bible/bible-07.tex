@@ -1,0 +1,166 @@
+%%%-----------------------------------------------------------------------
+%%%---> Cover Tikz pgfmanual
+%%%-----------------------------------------------------------------------
+%%%-----------------------------------------------------------------------
+%%%---> Article.pdf
+\newpage
+\begin{tikzpicture}
+	\draw [preaction={fill=black,opacity=.5, transform
+	canvas={xshift=1mm,yshift=-1mm}}] [fill=white,line width=1pt]
+		(0,0) rectangle (15,20);
+	\pgftext[at=\pgfpoint{0.5cm}{-1.5cm},left,base]
+		{\pgfimage[interpolate=true,height=20cm]{page-003.pdf}}
+	\draw[fill=light-blue] (0,20) rectangle (15,18); 
+	\node[rectangle, rounded corners=20pt,inner sep=11pt,
+		fill=light-blue!50!black, font=\large\bfseries\sffamily]
+		at (11,18) {\color{white}Журнальные статьи};
+	\node[draw opacity=0.8, fill opacity=0.5, text opacity=1, rotate=90,
+		font=\large\bfseries\sffamily, text=white, text opacity=1,
+		fill=red!50!black,fill,draw]
+	at (-0.3,4.3) {Адміністративне право України};
+	\node at (1, 19) {%
+	\begin{tikzpicture}[even odd rule,rounded
+		corners=2pt,x=10pt,y=10pt,drop shadow]
+	\filldraw[fill=yellow!90!black!40,drop shadow] (0,0)   rectangle (1,1)
+		[xshift=5pt,yshift=5pt] (0,0) rectangle (1,1)
+		[rotate=30] (-1,-1) rectangle (2,2);
+		\node at (0,1.7) {\textbf{\thepage}};
+\end{tikzpicture}
+	};
+\end{tikzpicture}
+
+
+%%%-----------------------------------------------------------------------
+%%%-----------------------------------------------------------------------
+%%%-----------------------------------------------------------------------
+
+%%%---> Bottom shadow page 167
+\newpage
+\begin{tikzpicture}
+	[
+	% Define an interesting style
+	button/.style={
+	% First preaction: Fuzzy shadow
+	preaction={fill=black,path fading=circle with fuzzy edge 20 percent,
+	opacity=.5,transform canvas={xshift=1mm,yshift=-1mm}},
+	% Second preaction: Background pattern
+	preaction={pattern=#1,
+	path fading=circle with fuzzy edge 15 percent},
+	% Third preaction: Make background shiny
+	preaction={top color=white,
+	bottom color=black!50,
+	shading angle=45,
+	path fading=circle with fuzzy edge 15 percent,
+	opacity=0.2},
+	% Fourth preaction: Make edge especially shiny
+	preaction={path fading=fuzzy ring 15 percent,
+	top color=black!5,
+	bottom color=black!80,
+	shading angle=45},
+	inner sep=2ex
+	},
+	button/.default=horizontal lines light blue,
+	circle
+	]
+%	\draw [help lines] (0,0) grid (4,3);
+	\node [button,minimum size=5cm] at (15.2,1) {\bf\huge Luga\TeX};
+	\node [button=crosshatch dots light steel blue, text=white,minimum
+		size=3cm] at (1,1.5) {\bf Luga\TeX};
+\end{tikzpicture}
+\vfill
+\begin{tikzpicture}
+	\node [circular drop shadow={shadow scale=1.05},minimum size=3.13cm,
+		fill=blue!20,draw,thick,circle] {Hello!};
+\end{tikzpicture}
+
+\vfill
+% \huge\bfseries\sffamily
+\begin{tikzfadingfrompicture}[name=tikz]
+	\node [text=transparent!20]
+	{\fontfamily{ptm}\fontsize{65}{65}\Huge\bfseries\selectfont Ti\emph{k}Z};
+\end{tikzfadingfrompicture}
+ Now we use the fading in another picture:
+\begin{tikzpicture}
+%	\fill [black!20] (-2,-1) rectangle (2,1);
+%	\pattern [pattern=checkerboard,pattern color=black!30]
+%	(-2,-1) rectangle (2,1);
+	\shade[path fading=tikz,fit fading=false, left color=blue, 
+		right color=black] (-2,-1) rectangle (2,1);
+\end{tikzpicture}
+\vfill
+\begin{tikzpicture}
+	% Checker board
+	\fill [black!20] (0,0) rectangle (4,4);
+	\path [pattern=checkerboard,pattern color=black!30] (0,0) rectangle
+	(4,4);
+	\shade [ball color=blue,path fading=south] (2,2) circle (1.8);
+\end{tikzpicture}
+
+\vfill
+
+\tikzfading[name=fade inside,
+inner color=transparent!80,
+outer color=transparent!30]
+\begin{tikzpicture}
+	% Checker board
+	\fill [black!20] (0,0) rectangle (4,4);
+	\path [pattern=checkerboard,pattern color=black!30] (0,0) rectangle
+	(4,4);
+	\shade [ball color=red] (3,3) circle (0.8);
+	\shade [ball color=white,path fading=fade inside] (2,2) circle (1.8);
+\end{tikzpicture}
+
+\vfill
+
+\tikzfading[name=middle,
+top color=transparent!50,
+bottom color=transparent!50,
+middle color=transparent!20]
+\begin{tikzpicture}
+	\node [circle,circular drop shadow,
+	pattern=horizontal lines dark blue,
+	path fading=south,
+	minimum size=3.6cm] {};
+	\pattern [path fading=north,
+	pattern=horizontal lines dark gray]
+	(0,0) circle (1.8cm);
+	\pattern [path fading=middle,
+	pattern=crosshatch dots light steel blue]
+	(0,0) circle (1.8cm);
+\end{tikzpicture}
+
+\newpage
+%\vfill
+%\tikz \calendar[dates=2000-01-01 to 2000-01-31,week list];
+%\vfill
+\sffamily\scriptsize
+\tikz
+\calendar [dates=2010-01-01 to 2010-12-31, month list,month label left,month yshift=1.25em]
+if (Sunday) [black!50];
+
+\newpage
+
+\tikz[mindmap,concept color=red!50]
+\node [concept] {Root concept}
+child[grow=right] {node[concept] {Child concept}};
+
+\newpage
+
+\pgfmathsetseed{1}
+\foreach \col in {black,red,green,blue}
+{
+\begin{tikzpicture}[x=10pt,y=10pt,ultra thick,baseline,line cap=round]
+	\coordinate (current point) at (0,0);
+	\coordinate (old velocity) at (0,0);
+	\coordinate (new velocity) at (rand,rand);
+	\foreach \i in {0,1,...,100}
+	{
+	\draw[\col!\i] (current point)
+	.. controls ++([scale=-1]old velocity) and
+	++(new velocity) .. ++(rand,rand)
+	coordinate (current point);
+	\coordinate (old velocity) at (new velocity);
+	\coordinate (new velocity) at (rand,rand);
+	}
+\end{tikzpicture}
+}
